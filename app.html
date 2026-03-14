@@ -1077,43 +1077,48 @@
 
             contentContainer.innerHTML = `
                 <div class="animate-fade-in-up">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-orange-900/20 text-brand-orange border border-orange-700/40 uppercase tracking-widest mb-6">
-                        Overview
-                    </span>
-                    
-                    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16">
-                        <!-- Book Cover image -->
-                        <div class="w-full lg:w-1/3 flex-shrink-0">
+
+                    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-16">
+                        <!-- Book Cover — fixed width, not stretchy -->
+                        <div class="w-full lg:w-auto lg:flex-shrink-0 lg:max-w-[260px]">
                             <div class="relative bg-zinc-900 p-2 rounded-xl border border-zinc-700 book-shadow">
                                 <img src="${aboutBookData.coverImage}" alt="Book Cover" class="w-full h-auto rounded-lg object-cover" onerror="this.src='https://via.placeholder.com/400x600.png?text=Book+Cover+Unavailable'">
                             </div>
-                            <div class="mt-8 text-center">
-                                <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="inline-flex items-center justify-center w-full gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-brand-orange text-white hover:bg-[#d15817] transition-all shadow-md hover:shadow-lg">
-                                    <i data-lucide="shopping-cart" class="w-4 h-4"></i> Get it on Amazon
-                                </a>
-                            </div>
+                            <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="mt-5 inline-flex items-center justify-center w-full gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-brand-orange text-white hover:bg-[#d15817] transition-all shadow-md hover:shadow-lg">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i> Get it on Amazon
+                            </a>
                         </div>
 
                         <!-- Summary -->
-                        <div class="w-full lg:w-2/3">
-                            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
+                        <div class="flex-1 min-w-0">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-orange-900/20 text-brand-orange border border-orange-700/40 uppercase tracking-widest mb-5">
+                                About the Book
+                            </span>
+                            <h1 class="text-3xl md:text-4xl font-black tracking-tight text-white mb-3 leading-tight">
                                 ${aboutBookData.fullTitle}
                             </h1>
-                            <h2 class="text-xl text-brand-orange font-semibold mb-8 pb-8 border-b border-white/10">
-                                ${aboutBookData.description}
-                            </h2>
-                            <div class="prose prose-invert prose-p:leading-relaxed prose-p:text-zinc-300 prose-p:font-medium prose-p:mb-6 max-w-none">
+                            <p class="text-base text-brand-orange font-semibold mb-2">${aboutBookData.description}</p>
+                            <p class="text-sm text-zinc-500 font-medium mb-6 pb-6 border-b border-white/10">By Kevin Shepherdson, William Hioe &amp; Lyn Boxall</p>
+                            <div class="text-sm text-zinc-300 font-medium leading-relaxed mb-8">
                                 <p>${aboutBookData.summary}</p>
                             </div>
 
-                            <div class="mt-10 grid grid-cols-2 gap-5">
-                                <div class="bg-zinc-900 border border-zinc-700 shadow-sm p-6 rounded-2xl">
-                                    <div class="text-4xl font-black text-white mb-2">99</div>
-                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Chapters</div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div class="bg-zinc-900/80 border border-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-3xl font-black text-white mb-1">99</div>
+                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Chapters</div>
                                 </div>
-                                <div class="bg-zinc-900 border border-zinc-700 shadow-sm p-6 rounded-2xl">
-                                    <div class="text-4xl font-black text-white mb-2">8</div>
-                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Core Modules</div>
+                                <div class="bg-zinc-900/80 border border-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-3xl font-black text-white mb-1">8</div>
+                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Modules</div>
+                                </div>
+                                <div class="bg-zinc-900/80 border border-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-3xl font-black text-brand-orange mb-1">5+</div>
+                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Jurisdictions</div>
+                                </div>
+                                <div class="bg-zinc-900/80 border border-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-3xl font-black text-brand-orange mb-1">Free</div>
+                                    <div class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Preview</div>
                                 </div>
                             </div>
                         </div>
