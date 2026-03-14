@@ -428,11 +428,48 @@ https://www.yourcompany.com/privacy/99-breaches/</div>
           <li>Monitor mobile bounce and fix any fold/layout issues quickly.</li>
         </ul>
 
-        <h3>SMART Asset Instruction (Startinfinity)</h3>
+        <h3>How to add analytics and tracking tags</h3>
+        <p>Open <code>app.html</code> and paste your tracking snippets inside the <code>&lt;head&gt;</code> tag, just before <code>&lt;/head&gt;</code>.</p>
+
+        <p><strong>GA4 (Google Analytics 4)</strong></p>
+        <div class="code">&lt;!-- Google Analytics --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // replace with your Measurement ID
+&lt;/script&gt;</div>
+
+        <p><strong>Meta Pixel (Facebook/Instagram ads)</strong></p>
+        <div class="code">&lt;!-- Meta Pixel --&gt;
+&lt;script&gt;
+  !function(f,b,e,v,n,t,s){...}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID'); // replace with your Pixel ID
+  fbq('track', 'PageView');
+&lt;/script&gt;
+&lt;noscript&gt;&lt;img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&amp;ev=PageView&amp;noscript=1"/&gt;&lt;/noscript&gt;</div>
+
+        <p><strong>LinkedIn Insight Tag</strong></p>
+        <div class="code">&lt;!-- LinkedIn Insight Tag --&gt;
+&lt;script type="text/javascript"&gt;
+  _linkedin_partner_id = "XXXXXXX"; // replace with your Partner ID
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+&lt;/script&gt;
+&lt;script src="https://snap.licdn.com/li.lms-analytics/insight.min.js" async&gt;&lt;/script&gt;</div>
+
+        <p class="note">
+          <strong>Where to get your IDs:</strong> GA4 → Google Analytics → Admin → Data Streams → your stream → Measurement ID (starts with G-). Meta Pixel → Meta Events Manager → your Pixel → Settings → Pixel ID. LinkedIn → Campaign Manager → Measurement → Insight Tag → Partner ID.
+        </p>
+
+        <h3>Continuous Enhancement</h3>
         <div class="note">
-          Look up in SMART (in Startinfinity) the various assets for the <strong>99 Privacy Breaches to Beware Of</strong>.
-          These include videos, write ups, infographics and sample of the book that you can enhance this.
-          Please update this resource in SMART so we may use it in future and in classes, in the region.
+          Use the <strong>SMART board in Startinfinity</strong> to track ongoing improvements to this resource.
+          Look up existing assets for <strong>99 Privacy Breaches to Beware Of</strong> — videos, write-ups, infographics, and book samples — and link them here or embed them into relevant chapters.
+          Update the SMART board whenever new content is added so the team can reuse these assets across classes and markets in the region.
         </div>
       </div>
     </section>
