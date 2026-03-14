@@ -79,6 +79,47 @@ Deployment settings:
 Expected site URL:
 - `https://altoh5.github.io/99-Breaches-Preview/`
 
+## Analytics Setup
+
+### LinkedIn Insight Tag (pending — assign to marketing manager)
+
+The page does not yet have a LinkedIn Insight Tag. This enables visitor tracking for LinkedIn ad audiences and retargeting.
+
+**Steps to set up:**
+1. Log in to [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager/) → account **SI Campaign Manager (508758293)**
+2. In the left sidebar, go to **Measurement → Conversion tracking**
+3. Click **Insight Tag** → **Create Insight Tag** (if not yet created)
+4. Choose **"I will install the tag myself"**
+5. Copy the numeric **Partner ID** (e.g. `1234567`)
+6. In `app.html`, add inside the `<head>` tag:
+   ```html
+   <!-- LinkedIn Insight Tag -->
+   <script type="text/javascript">
+   _linkedin_partner_id = "XXXXXXX"; // replace with your Partner ID
+   window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+   window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+   </script>
+   <script type="text/javascript">
+   (function(l) {
+   if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+   window.lintrk.q=[]}
+   var s = document.getElementsByTagName("script")[0];
+   var b = document.createElement("script");
+   b.type = "text/javascript";b.async = true;
+   b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+   s.parentNode.insertBefore(b, s);})(window.lintrk);
+   </script>
+   <noscript>
+   <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=XXXXXXX&fmt=gif" />
+   </noscript>
+   ```
+7. Replace both `XXXXXXX` with your actual Partner ID
+8. Commit and push — tag goes live in ~24 hours
+
+### GA4 / Meta Pixel
+
+Not yet added. Add tracking IDs to `.env` or directly in `app.html` as needed.
+
 ## Editing Notes
 
 If you update or expand the site:
