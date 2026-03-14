@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Privacy Breaches | Data Protection Excellence Network Resource</title>
-    
+    <title>99 Privacy Breaches to Beware Of — Free Sample Chapters | DPEX Network</title>
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://altoh5.github.io/99-Breaches-Preview/app.html">
+    <meta property="og:title" content="99 Privacy Breaches to Beware Of — Free Sample Chapters">
+    <meta property="og:description" content="13 real-world data breach case studies with practical DPO checklists — including the latest AI hallucination and PDPA 2024 cases. Free preview from Singapore's leading data protection guide.">
+    <meta property="og:image" content="https://altoh5.github.io/99-Breaches-Preview/og-cover.jpg">
+    <meta property="og:site_name" content="DPEX Network">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="99 Privacy Breaches to Beware Of">
+    <meta name="twitter:description" content="Free sample: real breaches, practical checklists, and the latest AI + PDPA cases for ASEAN DPOs.">
+    <meta name="description" content="13 real-world data breach case studies with practical DPO checklists — including the latest AI hallucination and PDPA 2024 cases. Free preview from Singapore's leading data protection guide.">
+
     <!-- Google Fonts: Inter for high-contrast SaaS typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,6 +161,29 @@
     </style>
 </head>
 <body class="font-sans text-slate-900 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden bg-brand-light">
+
+    <!-- Webinar Promo Banner -->
+    <div id="webinar-banner" class="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-[#1E2328] to-[#2d3748] text-white text-sm py-2.5 px-4 flex items-center justify-center gap-3 border-b border-slate-700 shadow-lg">
+        <span class="inline-flex items-center gap-1.5 bg-brand-orange/20 text-brand-orange text-xs font-bold px-2 py-0.5 rounded-full border border-brand-orange/30 uppercase tracking-wide animate-pulse">Live</span>
+        <span class="font-medium hidden sm:inline">See these breaches in action — <strong>Malaysia PDPA + AI Compliance Webinar</strong> with NetAssist × Straits Interactive</span>
+        <span class="font-medium sm:hidden">PDPA + AI Webinar — 18 Mar</span>
+        <span class="text-slate-400 text-xs hidden md:inline">Tue 18 Mar 2026 · 3pm MYT</span>
+        <a href="https://www.dpexnetwork.org" target="_blank" rel="noopener" class="ml-1 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-lg hover:bg-[#d15817] transition-all flex-shrink-0">Register Free →</a>
+        <button onclick="document.getElementById('webinar-banner').style.display='none'; document.body.style.paddingTop='0'" class="ml-2 text-slate-400 hover:text-white transition-colors flex-shrink-0" title="Dismiss">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+    </div>
+    <script>
+        // Offset body to account for fixed banner
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('webinar-banner');
+            if (banner) {
+                const h = banner.offsetHeight;
+                document.querySelector('.main-content-area, main, #main-content')?.style.setProperty('padding-top', h + 'px');
+            }
+        });
+    </script>
+
     <!-- Mobile sidebar backdrop -->
     <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/40 z-40 hidden md:hidden" onclick="closeMobileSidebar()"></div>
 
@@ -765,6 +800,88 @@
                             'Ensure IT applies security patches to operating systems immediately.',
                             'Train staff extensively on identifying phishing emails (the primary vector for ransomware).'
                         ]
+                    },
+                    {
+                        num: 97,
+                        title: 'When your AI chatbot becomes a legal liability',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'In March 2026, a Singapore court ordered two lawyers to pay S$5,000 each after their firm submitted fictitious AI-generated case citations in civil court proceedings. A paralegal had used an AI tool without disclosing it, and no one checked the citations. In a separate US case, a New York law firm was fined $5,000 for the same offence. In 2024, Air Canada\'s chatbot gave a customer incorrect refund information — a court ruled Air Canada was liable for its chatbot\'s statements.',
+                        learnings: 'AI "hallucinations" — confidently stated falsehoods — create real legal liability. Under PDPA and AI governance frameworks, organizations are accountable for decisions made or influenced by AI systems. This is especially critical when AI processes personal data (customer queries, HR decisions, medical triage) and produces outputs that affect individuals. The organisation, not the AI vendor, bears responsibility.',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-6 text-center">The AI Liability Chain</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-4 p-3 rounded-xl bg-rose-50 border border-rose-100">
+                                        <div class="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center flex-shrink-0"><i data-lucide="bot" class="w-5 h-5 text-rose-600"></i></div>
+                                        <div><div class="text-sm font-bold text-slate-800">AI generates wrong / fabricated output</div><div class="text-xs text-slate-500">Hallucinated citations, incorrect facts, biased recommendations</div></div>
+                                    </div>
+                                    <div class="flex justify-center"><i data-lucide="arrow-down" class="w-4 h-4 text-slate-400"></i></div>
+                                    <div class="flex items-center gap-4 p-3 rounded-xl bg-amber-50 border border-amber-100">
+                                        <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0"><i data-lucide="user-check" class="w-5 h-5 text-amber-600"></i></div>
+                                        <div><div class="text-sm font-bold text-slate-800">Human passes it on unchecked</div><div class="text-xs text-slate-500">No human review, no disclosure of AI use</div></div>
+                                    </div>
+                                    <div class="flex justify-center"><i data-lucide="arrow-down" class="w-4 h-4 text-slate-400"></i></div>
+                                    <div class="flex items-center gap-4 p-3 rounded-xl bg-emerald-50 border border-emerald-100 border-2 border-dashed border-emerald-400">
+                                        <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0"><i data-lucide="building-2" class="w-5 h-5 text-emerald-700"></i></div>
+                                        <div><div class="text-sm font-bold text-emerald-800">Organisation is liable — not the AI tool</div><div class="text-xs text-slate-500">Courts and regulators hold the deploying organisation accountable</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Disclose AI use in any output shared with third parties — customers, courts, or regulators.',
+                            'Require human review of AI-generated content before it affects individuals or creates legal obligations.',
+                            'Conduct a Data Protection Impact Assessment (DPIA) for any AI system that processes personal data or influences decisions about individuals.',
+                            'Document which AI tools are in use, what data they process, and who is accountable for the outputs.'
+                        ]
+                    },
+                    {
+                        num: 98,
+                        title: '72 hours: the breach notification clock starts ticking now',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'Under Malaysia\'s Personal Data Protection (Amendment) Act 2024 (in force 2025) and Singapore\'s PDPA, organisations must notify the regulator within 72 hours of discovering a significant data breach. In practice, many organisations have failed to report on time because they didn\'t know a breach had occurred — staff delayed escalating, or the incident was misclassified as a "system error." PDPC Singapore and PDPD Malaysia have both issued fines for late notification, even when the underlying breach was minor.',
+                        learnings: 'The 72-hour clock starts from when an organisation "becomes aware" of the breach — not when IT confirms it, not when legal reviews it. Malaysian DPOs now face personal liability under the 2024 amendments (up to RM 250,000 for notification failures). Critically, the obligation is to notify even if investigation is not complete — you report what you know and update the regulator as you learn more.',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-6 text-center">The 72-Hour Breach Response Timeline</h4>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <div class="flex flex-col items-center text-center p-3 rounded-xl bg-rose-50 border border-rose-100">
+                                        <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mb-2 text-rose-600 font-black text-sm">0h</div>
+                                        <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wide">Breach Discovered</div>
+                                        <div class="text-[10px] text-slate-500 mt-1">Clock starts NOW</div>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center p-3 rounded-xl bg-amber-50 border border-amber-100">
+                                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mb-2 text-amber-600 font-black text-sm">4h</div>
+                                        <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wide">Internal Triage</div>
+                                        <div class="text-[10px] text-slate-500 mt-1">Contain + assess scope</div>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center p-3 rounded-xl bg-blue-50 border border-blue-100">
+                                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-2 text-blue-600 font-black text-sm">24h</div>
+                                        <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wide">Initial Notify</div>
+                                        <div class="text-[10px] text-slate-500 mt-1">Draft notice to regulator</div>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center p-3 rounded-xl bg-emerald-50 border border-emerald-200 border-2 border-dashed">
+                                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mb-2 text-emerald-700 font-black text-sm">72h</div>
+                                        <div class="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">Deadline</div>
+                                        <div class="text-[10px] text-slate-500 mt-1">Submit — or face fines</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 p-3 bg-rose-50 border border-rose-200 rounded-xl text-center">
+                                    <p class="text-xs font-bold text-rose-700">Malaysia 2024: Up to RM 250,000 + 2 years for late notification. Directors personally liable.</p>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Designate a Breach Response Lead with authority to trigger the notification process — this cannot wait for legal sign-off.',
+                            'Build a 72-hour breach response runbook: who gets called, what gets assessed, what gets reported.',
+                            'Report to the regulator within 72 hours even if your investigation is incomplete — file an initial notice and supplement it.',
+                            'Train frontline IT and customer-facing staff to escalate suspected breaches immediately — do not let incidents sit in a helpdesk queue.',
+                            'Review Malaysia PDPA 2024 Amendment Act obligations if you handle data of Malaysian residents: 72-hour rule now applies to you.'
+                        ]
                     }
                 ]
             }
@@ -901,10 +1018,10 @@
                     <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
                     <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
                     
-                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');">
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="handleLeadSubmit(event, this)">
                         <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
                         <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            I'd like to learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            Get Free DPO Checklist <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </button>
                     </form>
                 </div>
@@ -1080,10 +1197,10 @@
                     <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
                     <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
                     
-                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');">
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="handleLeadSubmit(event, this)">
                         <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
                         <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            I'd like to learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            Get Free DPO Checklist <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </button>
                     </form>
                 </div>
@@ -1157,6 +1274,38 @@
             // Default to 'About Book' section on load
             selectSection('about-book');
         });
+
+        // Lead Capture — posts to Supabase page_leads table
+        async function handleLeadSubmit(e, form) {
+            e.preventDefault();
+            const email = form.querySelector('input[type="email"]').value;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<svg class="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending...';
+            btn.disabled = true;
+            try {
+                const res = await fetch('https://ikzomtgjcqbukcpitptu.supabase.co/rest/v1/page_leads', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlrem9tdGdqY3FidWtjcGl0cHR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNDY5NTksImV4cCI6MjA4NjYyMjk1OX0.PF2ETKZdW1oLr13lfZdBQQQC1B-twyZCLlH2g5YNZ14',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlrem9tdGdqY3FidWtjcGl0cHR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNDY5NTksImV4cCI6MjA4NjYyMjk1OX0.PF2ETKZdW1oLr13lfZdBQQQC1B-twyZCLlH2g5YNZ14',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({ email, page_source: '99-breaches-preview' })
+                });
+                if (res.ok || res.status === 201) {
+                    form.innerHTML = '<div class="flex items-center justify-center gap-2 text-emerald-400 font-bold py-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> You\'re in! We\'ll be in touch soon.</div>';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                // Fallback: mailto
+                window.location.href = 'mailto:alvin@straitsinteractive.com?subject=99 Breaches — DPO Checklist Request&body=Please send me the free DPO checklist. My email: ' + email;
+            }
+        }
 
     </script>
 </body>
