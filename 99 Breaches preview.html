@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en" class="scroll-smooth"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;99 Privacy Breaches | Data Protection Excellence Network Resource&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts: Inter for high-contrast SaaS typography --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Lucide Icons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind Configuration --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>fontFamily: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>sans: ['Inter', 'sans-serif'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brand: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>orange: '#E8631A',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>charcoal: '#1E2328',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>light: '#F8FAFC',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>border: '#E2E8F0',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>boxShadow: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'sm': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(232, 99, 26, 0.04)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'glow': '0 0 0 3px rgba(232, 99, 26, 0.15)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>animation: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fade-in-up': 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>keyframes: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>slideUpFade: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'0%': { opacity: '0', transform: 'translateY(20px)' },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'100%': { opacity: '1', transform: 'translateY(0)' },</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #F8FAFC;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Premium Custom Scrollbar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #CBD5E1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 99px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #94A3B8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* SaaS Accordion Transitions */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chapter-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-rows: 0fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chapter-content.expanded {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-rows: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chapter-inner {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-10px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.4s ease, transform 0.4s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chapter-content.expanded .chapter-inner {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Icon Rotations */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chevron-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.expanded .chevron-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: rotate(180deg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* True Glassmorphism Header */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.75);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(16px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-backdrop-filter: blur(16px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Responsive iframe wrapper for Google Drive videos */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.video-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 56.25%; /* 16:9 Aspect Ratio */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1E2328;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,255,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.video-wrapper iframe {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Sidebar active gradient */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-item.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #FFF0E8, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left-color: #E8631A;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E8631A;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Staggered initial load hiding */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stagger-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Book Cover Shadow Effect */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.book-shadow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: -5px 0px 10px rgba(0,0,0,0.05), 15px 15px 30px rgba(0,0,0,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="font-sans text-slate-900 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden bg-brand-light"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Left Sidebar (Fixed, 100vh) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;aside class="w-80 bg-white border-r border-brand-border flex-shrink-0 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.02)] hidden md:flex"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Sidebar Brand Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="h-16 flex items-center px-6 border-b border-brand-border cursor-pointer hover:bg-slate-50 transition-colors" onclick="selectSection('about-book')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-8 h-10 flex-shrink-0 shadow-sm border border-slate-200 rounded overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images-na.ssl-images-amazon.com/images/P/9814794643.01._SCLZZZZZZZ_.jpg" alt="Book Cover Icon" class="w-full h-full object-cover block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="font-bold text-lg tracking-tight text-slate-900"&gt;99 Privacy &lt;span class="text-brand-orange"&gt;Breaches&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex-1 overflow-y-auto custom-scrollbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 pb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4"&gt;Overview&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- About Book Link --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="px-3 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold group transition-all" onclick="selectSection('about-book')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="flex items-center gap-3"&gt;&lt;i data-lucide="book" class="w-4 h-4"&gt;&lt;/i&gt; About the Book&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i id="about-book-icon" data-lucide="chevron-right" class="transition-transform opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 w-4 h-4 flex-shrink-0"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="px-6 pb-2 border-t border-brand-border pt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4"&gt;Areas to beware of&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;nav class="px-3 space-y-1 pb-6" id="sidebar-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Nav items injected via JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="p-5 border-t border-brand-border bg-slate-50/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-bold bg-white border border-slate-200 text-slate-800 hover:border-brand-orange hover:text-brand-orange hover:shadow-sm transition-all group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i data-lucide="shopping-bag" class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Purchase the Book</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main App Layout --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="flex-1 flex flex-col relative min-w-0"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Top Navigation (Absolute &amp; Sticky over scrolling content) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="absolute top-0 left-0 w-full z-50 glass-header border-b border-slate-200/80 h-16 flex items-center px-6 md:px-10 justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://dpexnetwork.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white text-slate-700 border border-slate-200 tracking-wider uppercase hover:text-brand-orange hover:border-orange-200 hover:shadow-sm transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="w-2 h-2 rounded-full bg-brand-orange mr-2"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Data Protection Excellence Network Resource</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Search Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hidden md:flex items-center bg-white/60 rounded-xl px-4 py-2 border border-slate-200 focus-within:border-brand-orange focus-within:bg-white focus-within:shadow-glow transition-all duration-300 w-80 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="search" class="w-4 h-4 text-slate-400 group-focus-within:text-brand-orange transition-colors"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="searchInput" placeholder="Search cases, learnings, keywords..." class="bg-transparent border-none outline-none text-sm w-full text-slate-800 font-medium placeholder-slate-400 ml-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center gap-4 border-l border-slate-200 pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="text-slate-400 hover:text-brand-orange transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="bell" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-brand-charcoal hover:ring-2 hover:ring-offset-2 hover:ring-brand-orange transition-all shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>DPO</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Right Content Pane (Scrolls underneath header) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main class="flex-1 overflow-y-auto custom-scrollbar pt-24 pb-12 px-6 md:px-12 lg:px-20 relative" id="main-content"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Abstract background graphic for main content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-orange-50 to-transparent rounded-full blur-[100px] opacity-80 pointer-events-none -z-10"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-4xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Dynamic Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-12 pb-8 border-b border-slate-200/80" id="content-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3 mb-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="current-section-badge" class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-orange-100 text-brand-orange uppercase tracking-widest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Select an Area</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 id="current-section-title" class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-[1.1]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Operational Compliance Hub</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p id="current-section-desc" class="text-slate-600 text-lg md:text-xl font-medium leading-relaxed max-w-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Select an area from the sidebar to explore real-world privacy breach cases, actionable DPO learnings, and accompanying video lessons.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Content Container (Injects Chapters OR About Book) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="content-container" class="space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Content injected via JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript Data and Logic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* * ABOUT THE BOOK DATA</p>
+<p class="p1"><span class="Apple-converted-space">         </span>*/</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const aboutBookData = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>id: 'about-book',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>shortTitle: 'About the Book',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fullTitle: '99 Privacy Breaches to Beware Of',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>description: 'Practical Data Protection Tips from Real-Life Experiences',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>coverImage: 'https://images-na.ssl-images-amazon.com/images/P/9814794643.01._SCLZZZZZZZ_.jpg',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>summary: `Today, an increasing number of jurisdictions require notification of data breaches to relevant supervisory authorities. The details of the laws differ widely, but the mistakes that lead to breaches are the same wherever they happen - for example, you had a 'bad day' and clicked the wrong button, giving an employee's ex-wife access to his health data, or you accidentally sent the data of one of your students to 1,900 parents.&lt;br&gt;&lt;br&gt;The authors have gathered hundreds of hints in 99 chapters that will help you develop all the procedures you need to avoid data breaches without having to read all the legislation.`,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reviews: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quote: "This book is exceptional on a number of levels. Well-written and logically constructed, it draws upon the experience of the authors to provide a roadmap for addressing day-to-day privacy issues at a pragmatic level.",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>author: "Gordon Hughes",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: "Partner, Davies Collison Cave, Melbourne"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quote: "Finally, a book focusing on operational practice, rather than the law, has been written. I wholeheartedly endorse this comprehensive and practical effort and hope it will become the standard bible for data protection practices.",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>author: "Dr Toh See Kiat",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: "Veteran Lawyer in Data Protection &amp; Former MP of Singapore"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quote: "Much has been written previously for compliance officers, privacy professionals and lawyers... But this handbook is for the layperson - easy to read and practical. It fills in many gaps and answers many questions about how to comply.",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>author: "Prof. Abu Bakar Munir",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: "Author of Data Protection Law in Asia"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quote: "This book achieves a rare feat: making personal data protection practical, understandable and actionable. It is a valuable resource for marketers at all levels.",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>author: "Lisa Watson",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: "Chairman, Direct Marketing Association of Singapore"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* * BOOK CHAPTERS DATA (All 8 Categories)</p>
+<p class="p1"><span class="Apple-converted-space">         </span>*/</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const bookData = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-a',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Governance &amp; Asset Mgmt',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section A: Governance &amp; Information Asset Management',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Foundational matters for establishing a privacy program. Learn to identify and manage the lifecycle of physical and digital assets before a breach occurs.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Data protection: don\'t forget that it is also physical',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 1: The Physical Document Life Cycle',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'While organizations heavily invest in firewalls and network security, they often forget the massive amount of paper documents containing personal, confidential, or sensitive information. Common issues include official documents (like land titles or marriage certificates), meeting notes, and application forms left unattended on desks or improperly stored.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'A DPO must map the physical "document life cycle" (Create, Store, Use/Share, Disclose, Dispose). Creating a document flow diagram helps identify physical vulnerabilities (e.g., the handover point between departments). Legal compliance is useless if an unauthorized cleaner or visitor can simply pick up a confidential file from an unlocked desk.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8 text-center"&gt;The Physical Document Life Cycle&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex flex-col sm:flex-row items-center justify-between gap-2 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="hidden sm:block absolute top-1/2 left-6 right-6 h-0.5 bg-slate-100 -z-10 -translate-y-1/2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center bg-white z-10 px-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="file-plus-2" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-xs font-bold text-slate-700"&gt;Create&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center bg-white z-10 px-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="archive" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-xs font-bold text-slate-700"&gt;Store&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center bg-white z-10 px-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="users" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-xs font-bold text-slate-700"&gt;Use/Share&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center bg-white z-10 px-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="send" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-xs font-bold text-slate-700"&gt;Disclose&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center bg-white z-10 px-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="trash-2" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-xs font-bold text-slate-700"&gt;Dispose&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Document the physical document life cycle and create a flow diagram.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Maintain an up-to-date document inventory.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Implement and clearly mark an agreed document classification scheme (e.g., "Confidential").',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Carry out regular onsite audits to check if employees are locking cabinets.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 3,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Designing privacy into information systems and processes',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'An organization implemented a new ATM greeting that displayed "Welcome [Customer Name]" in huge letters. Another deployed a ticketless parking system that tracked vehicle movements via SMS without verifying user identities. In both cases, convenience and cool features were prioritized, completely ignoring the privacy implications of exposing data in public or allowing unauthorized tracking.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'DPOs must champion "Privacy by Design" (PbD) from Dr. Ann Cavoukian. Privacy should not be an afterthought retrofitted just before a product launch. Privacy must be the default setting. Software developers and process engineers must be trained to specify privacy requirements during the initial design phase.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-12 h-12 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center justify-center mx-auto mb-4"&gt;&lt;i data-lucide="shield-alert" class="w-6 h-6 text-emerald-600"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h5 class="text-sm font-bold text-slate-900 mb-2"&gt;Proactive&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-slate-600 leading-relaxed font-medium"&gt;Preventative, not remedial. Anticipate privacy risks before they happen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-12 h-12 bg-blue-50 rounded-xl border border-blue-100 flex items-center justify-center mx-auto mb-4"&gt;&lt;i data-lucide="toggle-left" class="w-6 h-6 text-blue-600"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h5 class="text-sm font-bold text-slate-900 mb-2"&gt;Default Setting&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-slate-600 leading-relaxed font-medium"&gt;Maximum privacy automatically applied without user action.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-12 h-12 bg-purple-50 rounded-xl border border-purple-100 flex items-center justify-center mx-auto mb-4"&gt;&lt;i data-lucide="layers" class="w-6 h-6 text-purple-600"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h5 class="text-sm font-bold text-slate-900 mb-2"&gt;Embedded&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-slate-600 leading-relaxed font-medium"&gt;Privacy becomes an essential component of the core functionality.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Design privacy into information systems and processes from day one.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Ensure Privacy is the default setting (e.g., names hidden by default unless opted in).',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Mandate Privacy Impact Assessments (PIAs) before launching new features.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-b',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Collection of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section B: Collection of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'The overriding principle is that the collection of personal data should be lawful, limited, and based on clear consent.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 8,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Are your sales and service counters compliant?',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 8: Service Counters &amp; Data Exposure',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'At an electronics store, a salesperson asked a customer for their full name, address, and Identity Card (IC) number just to buy a product. The data was written on a scrap piece of paper which was then left beside the Point of Sale (POS) system for the next customer to see. Additionally, the POS computer screen was angled so anyone could see previous customers\' purchase histories.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Frontline staff are the weakest link if not properly trained. DPOs must realize that legal paperwork is insufficient if operational practices fail. Organizations must establish strict rules against collecting excessive data (like IC numbers for simple retail purchases) and enforce strict physical security around POS systems.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex flex-col sm:flex-row gap-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex-1 bg-white border-2 border-red-100 p-6 rounded-xl shadow-xs relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="absolute top-0 left-0 w-1.5 h-full bg-red-400"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-3 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="p-2 bg-red-50 rounded-lg"&gt;&lt;i data-lucide="x-octagon" class="w-6 h-6 text-red-500"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h5 class="text-base font-bold text-slate-900"&gt;The Wrong Way&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;ul class="space-y-3 text-sm text-slate-700 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"&gt;&lt;/i&gt; Asking for IC/SSN for basic purchases&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"&gt;&lt;/i&gt; Writing details on scrap paper&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"&gt;&lt;/i&gt; POS screens visible to the public&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex-1 bg-white border-2 border-emerald-100 p-6 rounded-xl shadow-xs relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="absolute top-0 left-0 w-1.5 h-full bg-emerald-400"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-3 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="p-2 bg-emerald-50 rounded-lg"&gt;&lt;i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-500"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h5 class="text-base font-bold text-slate-900"&gt;The Right Way&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;ul class="space-y-3 text-sm text-slate-700 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"&gt;&lt;/i&gt; Minimum viable data collection&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"&gt;&lt;/i&gt; Direct entry into secure POS&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;li class="flex items-start gap-3"&gt;&lt;i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"&gt;&lt;/i&gt; Privacy screens on monitors&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Avoid using scraps of paper to record personal data.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Tilt computer screens or use privacy filters so POS data is hidden from public view.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Do not collect IC numbers unless legally or strictly operationally required.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Do not leave invoices or receipts in open trays.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-c',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Usage of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section C: Usage of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Usage is limited by the purpose notified to the individual. Understand the perils of secondary usage, insecure file sharing, and the dangers lurking in digital copiers.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 28,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Anonymising personal data but is the individual really not identifiable?',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'Organizations often anonymize data for research or secondary purposes. However, many just strip out the name and assume it is safe. Knowing just three pieces of information—birth date, zip code, and gender—can re-identify individuals with a high degree of certainty by matching them against public records.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Anonymization is complex and often implemented incorrectly. DPOs must understand that pseudonymization is not anonymization. If a "key" exists to re-link the data, it is still personal data. True anonymization requires irreversible destruction of the link.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Remove unique identifiers, and consider aggregating or generalizing data.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Do not assume anonymity is safe; test against public record matching.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Implement strict retention policies for the "keys" if using pseudonymization.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 38,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Watch your spreadsheet – spreading personal data',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 38: The Hidden Threat of Spreadsheets',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'An employee accidentally attached a spreadsheet containing names, SSNs, and health info of 1,900 pupils to an email sent to parents. The employee had intended to send a simple update but attached the master tracking file instead.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Spreadsheets are the hidden threat of the digital office. They easily hold millions of rows of data and bypass complex IT security. DPOs must enforce strict spreadsheet hygiene, including password-protecting individual files and strictly auditing email attachments.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Password-protect all spreadsheets containing personal data.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Double-check attachments before hitting "Send".',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Use DLP (Data Loss Prevention) software to block unencrypted spreadsheets from leaving the network.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-d',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Data Accuracy &amp; Integrity',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section D: Data Accuracy &amp; Integrity',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Organizations are legally required to ensure the personal data they hold is accurate, especially when used to make decisions affecting individuals.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 40,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Identity verification – the wrong way',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 40: Customer Verification Pitfalls',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'A bank customer approached a trainee teller due to an ATM card error. The trainee pulled up the record and asked: "Sir, is your name John Doe? Is your NRIC number S1234567A? Is your date of birth 01/01/1980?" The customer simply answered "YES" to all three, and was issued a new card.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Leading questions feed the answers to potential fraudsters. If a malicious actor found a lost ATM card, they could easily agree with the teller and hijack the account. DPOs must train customer-facing staff to ask open-ended questions: "What is your name? What is your ID number?"',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm flex flex-col md:flex-row items-center gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-slate-200 pb-6 md:pb-0 md:pr-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="inline-flex items-center justify-center w-14 h-14 bg-slate-100 rounded-xl mb-4 border border-slate-200 shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i data-lucide="user-cog" class="w-7 h-7 text-slate-600"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-base font-bold text-slate-900"&gt;Teller asks:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm font-medium text-slate-500 italic mt-2"&gt;"Is your ID S1234567A?"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-red-50 p-6 rounded-xl flex-1 text-center border border-red-100 shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="alert-triangle" class="w-8 h-8 text-red-500 mx-auto mb-3"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-base font-bold text-red-900"&gt;Fraudster replies:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm text-red-600 font-bold mt-2"&gt;"YES"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-[11px] font-bold text-red-500 mt-3 uppercase tracking-widest"&gt;Data Breached&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Force the customer to supply their own personal data, then verify it against records.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Train frontline and call center staff on exact phrasing for verification questions.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Audit verification processes regularly via mystery shopping.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 41,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Identity verification – the right way',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'A customer called a bank to activate a new card. The Customer Service Officer asked standard NRIC and DOB questions, but then asked an internal question: "Which year did you open your account with us?" When the customer couldn\'t remember, the CSO politely refused to process the request over the phone and asked the customer to visit a branch with their ID.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Basic data like DOB and ID numbers are often easily found online or on social media. DPOs should implement multi-factor authentication or dynamic verification questions (e.g., "How many active cards do you hold with us?") that only the true customer would know. A minor customer inconvenience is far better than a major data breach.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-slate-900 rounded-xl p-8 mb-8 text-white flex flex-col md:flex-row items-center gap-8 shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-slate-700 pb-6 md:pb-0 md:pr-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-base font-bold text-slate-200 mb-4"&gt;Multi-Factor Approach&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex justify-center md:justify-end gap-3 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="px-3 py-1.5 bg-slate-800 text-xs font-semibold rounded-md border border-slate-700 shadow-inner"&gt;Standard ID&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-slate-500 font-black"&gt;+&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="px-3 py-1.5 bg-brand-orange text-xs font-bold rounded-md shadow-[0_0_10px_rgba(232,99,26,0.3)]"&gt;Dynamic Qs&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex-1 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="inline-flex items-center justify-center w-14 h-14 bg-emerald-500/20 rounded-xl border border-emerald-500/40 mb-3 shadow-[0_0_15px_rgba(16,185,129,0.15)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i data-lucide="shield-check" class="w-7 h-7 text-emerald-400"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-base font-bold text-emerald-400"&gt;Access Granted&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-sm font-medium text-slate-400 mt-1"&gt;Identity definitively proven&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Go beyond standard NRIC/DOB questions for phone verification.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Include questions related to the customer\'s unique transaction history.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Train staff to confidently deny service if verification fails, without fear of customer anger.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-e',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Physical &amp; Env Security',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section E: Physical &amp; Environmental Security',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'The clean desk way to data privacy. Mitigate risks associated with public computer terminals, open office layouts, and smart devices.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 49,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Clean desk way to data privacy',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 49: Mastering the Clean Desk Policy',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'A messy desk can hide missing access cards or expose confidential documents to cleaning staff after hours. A Clean Desk Policy ensures sensitive materials are locked away when the workspace is unoccupied.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Physical environment security is just as critical as firewalls. DPOs must enforce clean desk policies to prevent "shoulder surfing" and unauthorized after-hours access.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Clear all personal data and confidential info when leaving your desk.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Lock computer screens when stepping away.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Do not leave security devices (access passes) unattended.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 51,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Open office, open invitation to snoop',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'Modern open-plan offices improve teamwork but allow employees from different departments to peer over cubicle walls to see what others are working on, including highly confidential HR or Finance files.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Office layouts must consider "need to know" access. DPOs should advise that departments handling highly sensitive data (like HR and Finance) be housed in separate, access-controlled rooms with locked doors.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Require employees to practice self-safeguarding of documents in open areas.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'House employees handling highly sensitive information in restricted access rooms.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Restrict visitor movement to the waiting area unless escorted.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-f',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Security, Storage &amp; Disposal',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section F: Security, Storage, Retention &amp; Disposal',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Protecting data on mobile devices, securely handling USB drives, regular email housekeeping, and the critical importance of secure shredding.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 62,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Beware - don\'t lose your USB drive',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 62: Mitigating Risks of Portable Storage',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'Surveys revealed thousands of USB drives are left in laundromats, taxis, and airports every year. A local government was fined £80,000 after a teacher lost an unencrypted USB stick containing sensitive data of children.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Portable storage is highly vulnerable to loss. DPOs must enforce mandatory encryption for all portable drives or outright ban their usage. The BYOD (Bring Your Own Device) policy must strictly dictate how data is transferred.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Protect USB drives with strong passwords and hardware encryption.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Delete sensitive documents from portable storage when no longer needed.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Scan all external drives for malware before connecting to the network.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 73,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'A-tearing we will go (Shredding)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'Employees often just tear documents in half and throw them in the wastepaper basket because the shredder is "too far away". These pieces can easily be retrieved and pieced back together by unauthorized individuals.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Secure disposal is legally mandated. Merely tearing papers is a compliance failure. DPOs should implement a "shred all" policy to eliminate employee guesswork about what constitutes confidential data, using high-quality cross-cut shredders or secure disposal services.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Adopt a "shred all" policy for all office paper waste.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Invest in cross-cut shredders or secure, locked document disposal bins.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Do not place unshredded papers next to the shredder if employees are "too busy".'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-g',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'Disclosure of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section G: Disclosure of Personal Data',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Learn boundaries for disclosing data to agents, handling HR warnings, and avoiding accidental disclosures via CCTV, social media, or notice boards.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 80,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'CCTV footage - to show or not to show',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'An individual requested CCTV footage from a property manager showing their car being scratched. The manager handed over the raw footage, which included the clear faces of numerous other uninvolved residents going about their day.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'CCTV footage capturing human faces is personal data. While data subjects have a right to access their own data, organizations cannot violate the privacy of others in the footage. DPOs must establish workflows to "mask" or blur other individuals before releasing footage.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Display prominent signs informing visitors that CCTV is in operation.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Verify the purpose of an access request to weed out frivolous ones.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Mask or blur faces of other identifiable individuals before releasing footage.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 86,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Watch what you say about your employees or clients',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 86: The Risks of Indiscreet Disclosure',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'A kindergarten headmistress disclosed an employee\'s divorced status to colleagues without consent. An employee complained, and the regulator ruled the disclosure was completely unrelated to the original HR purpose of collecting the data.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Careless gossip, even with good intent, is an unauthorized disclosure of personal data. DPOs must train managers and staff to treat colleague and client information with strict confidentiality and enforce acceptable use policies for internal communications.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: '',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Watch what you say (or write) about another individual, even with good intent.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Ensure employees are trained on their obligations under the data protection law.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Develop and implement relevant policies if your organization uses chat rooms or social media.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 'sec-h',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shortTitle: 'New Areas &amp; Tech Concerns',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fullTitle: 'Section H: New Areas, Developments and Technological Concerns',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>description: 'Handling modern challenges: Appointing a Data Protection Officer, ransomware threats, IoT vulnerabilities, and the gig economy.',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>chapters: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 89,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Have you appointed a Data Protection Officer?',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: null,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'A company was audited by the Bavarian Data Protection Authority and found to have appointed its IT Manager as the Data Protection Officer. The regulator ruled this a severe conflict of interest, as the IT Manager would be overseeing their own technical implementations. The company refused to change the DPO and was subsequently fined.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Under laws like the GDPR and PDPA, appointing a DPO is often mandatory. The DPO role requires a delicate balance of skillsets: legal understanding, project management, and practical business process experience. It does not automatically have to be a lawyer, but it cannot be someone whose primary job conflicts with independent data auditing.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-6"&gt;The Ideal DPO Skillset&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-center relative -space-x-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-28 h-28 rounded-full bg-blue-500/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-10 hover:z-30 hover:scale-110 transition-all"&gt;Legal&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-28 h-28 rounded-full bg-emerald-500/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-20 -translate-y-5 hover:z-30 hover:scale-110 transition-all"&gt;Operations&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-28 h-28 rounded-full bg-brand-orange/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-10 hover:z-30 hover:scale-110 transition-all"&gt;Leadership&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm text-slate-600 font-medium mt-6"&gt;A balanced convergence of skills, completely independent from IT execution.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Ensure the appointed DPO does not have a conflict of interest (e.g., not the Head of IT).',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Provide the DPO with sufficient authority and resources to report directly to senior management.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Ensure the DPO has practical operational experience, not just legal knowledge.'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>num: 95,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: 'Ransomware – pay up or else',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hasVideo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoTitle: 'Chapter 95: Understanding Ransomware Defenses',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>videoUrl: 'https://drive.google.com/file/d/1QbQoRo1gdt6FO2oMIonxfpii3CMMPcJ_/preview',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>context: 'The WannaCry ransomware attack infected over 300,000 computers globally, encrypting data and demanding Bitcoin. In the UK, 16 health service organizations were crippled, forcing hospitals to cancel surgical operations and revert to pen and paper because staff were locked out of critical medical databases.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>learnings: 'Ransomware plays on human psychology and software vulnerabilities. DPOs must work with IT to ensure data availability (a key tenet of data protection). Paying the ransom guarantees nothing. The best defense is rigorous, air-gapped backups and strict protocols against clicking phishing links.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>infographic: `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center flex-1 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-rose-50 flex items-center justify-center mb-3 shadow-xs border border-rose-100 group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="mail-warning" class="w-6 h-6 text-rose-500"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] font-bold text-slate-700 text-center uppercase tracking-wide"&gt;Phishing&lt;br&gt;Entry&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-10 h-0.5 bg-slate-200 mx-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center flex-1 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-3 shadow-xs border border-slate-200 group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="lock" class="w-6 h-6 text-slate-700"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] font-bold text-slate-700 text-center uppercase tracking-wide"&gt;Data&lt;br&gt;Encrypted&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="w-10 h-0.5 bg-slate-200 mx-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex flex-col items-center flex-1 border-2 border-dashed border-emerald-300 rounded-xl p-3 bg-emerald-50 relative group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="absolute -top-2 -right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center border-2 border-white"&gt;&lt;i data-lucide="check" class="w-3 h-3 text-white"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform"&gt;&lt;i data-lucide="server" class="w-5 h-5 text-emerald-600"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span class="text-[11px] font-bold text-emerald-800 text-center uppercase tracking-wide"&gt;Air-Gapped&lt;br&gt;Backup&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>checklists: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Implement a strict schedule for backing up data on secondary storage disconnected from the main network.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Ensure IT applies security patches to operating systems immediately.',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'Train staff extensively on identifying phishing emails (the primary vector for ransomware).'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// State Management</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentSectionId = 'about-book'; // Default View</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Elements</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sidebarNav = document.getElementById('sidebar-nav');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const navAboutBook = document.getElementById('nav-about-book');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const contentHeader = document.getElementById('content-header');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const contentContainer = document.getElementById('content-container');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const searchInput = document.getElementById('searchInput');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Render Sidebar</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderSidebar() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>sidebarNav.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Safely update the static "About Book" button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (navAboutBook) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const icon = document.getElementById('about-book-icon');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentSectionId === 'about-book') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>navAboutBook.classList.add('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>navAboutBook.classList.remove('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (icon) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.replace('opacity-0', 'opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.replace('-translate-x-2', 'translate-x-1');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.add('text-brand-orange');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>navAboutBook.classList.remove('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>navAboutBook.classList.add('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (icon) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.replace('opacity-100', 'opacity-0');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.replace('translate-x-1', '-translate-x-2');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>icon.classList.remove('text-brand-orange');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>bookData.forEach(section =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isActive = section.id === currentSectionId;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btn = document.createElement('button');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.className = `nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1.5 flex items-center justify-between outline-none border-l-4 border-transparent</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${isActive<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>? 'active shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] border border-orange-100/50'<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>: 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold'}`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="truncate pr-2"&gt;${section.shortTitle}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="chevron-right" class="transition-transform ${isActive ? 'text-brand-orange translate-x-1 opacity-100' : 'text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'} w-4 h-4 flex-shrink-0"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.onclick = () =&gt; selectSection(section.id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>sidebarNav.appendChild(btn);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Select a Section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function selectSection(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentSectionId = id;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderSidebar();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (id === 'about-book') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderAboutBook();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const section = bookData.find(s =&gt; s.id === id);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Update Header</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentHeader.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('current-section-badge').textContent = section.shortTitle;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('current-section-title').textContent = section.fullTitle;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('current-section-desc').textContent = section.description;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Render Chapters</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderChapters(section.chapters);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Scroll to top of main content smoothly</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Render About the Book View</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderAboutBook() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>contentHeader.style.display = 'none'; // Hide default header for this view</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let reviewsHtml = aboutBookData.reviews.map((review, idx) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all h-full flex flex-col justify-between" style="animation-delay: ${(idx * 0.1) + 0.3}s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="quote" class="w-8 h-8 text-brand-orange/20 mb-5 fill-brand-orange/10"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-slate-700 font-medium leading-relaxed italic mb-8"&gt;"${review.quote}"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="border-t border-slate-100 pt-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-bold text-slate-900 text-sm"&gt;${review.author}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-slate-500 font-medium mt-1"&gt;${review.title}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Added Lead Capture HTML at the bottom of the About section</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const leadCaptureHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-16 bg-gradient-to-br from-[#1E2328] to-[#121518] rounded-3xl p-10 shadow-xl border border-slate-700 animate-fade-in-up text-center relative overflow-hidden" style="animation-delay: 0.6s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 h-72 bg-brand-orange rounded-full blur-[100px] opacity-30 pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-20 pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-flex items-center justify-center w-16 h-16 bg-white/5 rounded-2xl border border-white/10 mb-6 backdrop-blur-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="mail" class="w-8 h-8 text-brand-orange"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-3xl font-black text-white mb-4 tracking-tight"&gt;Want to dive deeper?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed"&gt;Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>I'd like to learn more &lt;i data-lucide="arrow-right" class="w-4 h-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>contentContainer.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="animate-fade-in-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-orange-100/50 text-brand-orange border border-orange-200 uppercase tracking-widest mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Overview</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/span&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Book Cover image --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full lg:w-1/3 flex-shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="relative bg-white p-2 rounded-xl border border-slate-100 book-shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="${aboutBookData.coverImage}" alt="Book Cover" class="w-full h-auto rounded-lg object-cover" onerror="this.src='https://via.placeholder.com/400x600.png?text=Book+Cover+Unavailable'"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-8 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="inline-flex items-center justify-center w-full gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-brand-orange text-white hover:bg-[#d15817] transition-all shadow-md hover:shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="shopping-cart" class="w-4 h-4"&gt;&lt;/i&gt; Get it on Amazon</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Summary --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full lg:w-2/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>${aboutBookData.fullTitle}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-xl text-brand-orange font-semibold mb-8 pb-8 border-b border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>${aboutBookData.description}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="prose prose-slate prose-p:leading-relaxed prose-p:text-slate-700 prose-p:font-medium prose-p:mb-6 max-w-none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p&gt;${aboutBookData.summary}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-10 grid grid-cols-2 gap-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-slate-200 shadow-sm p-6 rounded-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-4xl font-black text-slate-900 mb-2"&gt;99&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-xs font-bold text-slate-500 uppercase tracking-widest"&gt;Chapters&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-slate-200 shadow-sm p-6 rounded-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-4xl font-black text-slate-900 mb-2"&gt;8&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-xs font-bold text-slate-500 uppercase tracking-widest"&gt;Core Modules&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Testimonials/Reviews --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="pt-12 border-t border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-extrabold text-slate-900 mb-8"&gt;What Industry Leaders Say&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${reviewsHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${leadCaptureHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Render Chapters with Staggered Animation</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderChapters(chapters) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>contentContainer.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (chapters.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentContainer.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center py-16 bg-white rounded-2xl border border-dashed border-slate-300 animate-fade-in-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="search-x" class="w-8 h-8 text-slate-300"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-lg font-bold text-slate-900 mb-1"&gt;No chapters found&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm font-medium text-slate-500"&gt;Try adjusting your search terms.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>chapters.forEach((chapter, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const hasVideo = chapter.hasVideo &amp;&amp; chapter.videoUrl !== null;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const videoBadge = hasVideo ? `&lt;span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-bold bg-brand-orange/10 text-brand-orange border border-brand-orange/20 tracking-wide uppercase"&gt;&lt;i data-lucide="play" class="w-3 h-3 mr-1 fill-current"&gt;&lt;/i&gt; Video Lesson&lt;/span&gt;` : '';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const checklistHtml = chapter.checklists.map(item =&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>`&lt;li class="flex items-start gap-3 text-sm text-slate-700 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-0.5 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="check" class="w-3 h-3 text-emerald-600 stroke-[3]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="leading-relaxed"&gt;${item}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/li&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">                </span>).join('');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const videoHtml = hasVideo ? `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-10 pt-8 border-t border-slate-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="text-sm font-extrabold text-slate-900 mb-5 flex items-center gap-2 uppercase tracking-wider"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="p-1.5 bg-brand-orange/10 rounded-lg"&gt;&lt;i data-lucide="monitor-play" class="w-4 h-4 text-brand-orange"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${chapter.videoTitle || 'Interactive Training'}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="video-wrapper rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;iframe src="${chapter.videoUrl}" allow="autoplay" allowfullscreen&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>` : '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const infographicHtml = chapter.infographic ? chapter.infographic : '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const cardHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none" onclick="toggleChapter(${chapter.num})"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="pr-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center mb-2.5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="text-xs font-extrabold text-slate-400 tracking-[0.15em] uppercase"&gt;Chapter ${chapter.num}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>${videoBadge}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-orange transition-colors"&gt;${chapter.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-shrink-0 w-10 h-10 bg-slate-50 flex items-center justify-center rounded-xl border border-slate-100 group-hover:bg-orange-50 group-hover:border-orange-200 transition-colors shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="chevron-down" id="icon-chapter-${chapter.num}" class="w-5 h-5 text-slate-500 group-hover:text-brand-orange chevron-icon"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="content-chapter-${chapter.num}" class="chapter-content bg-slate-50/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="chapter-inner px-8 pb-8 pt-2"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="grid lg:grid-cols-2 gap-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="absolute top-0 left-0 w-1.5 h-full bg-slate-300"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;i data-lucide="book-open" class="w-4 h-4 text-slate-400"&gt;&lt;/i&gt; The Context</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="text-sm text-slate-700 font-medium leading-relaxed"&gt;${chapter.context}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-orange-50/50 p-6 rounded-xl border border-orange-100 shadow-xs relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="absolute top-0 left-0 w-1.5 h-full bg-brand-orange"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-3 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;i data-lucide="lightbulb" class="w-4 h-4 fill-brand-orange/20"&gt;&lt;/i&gt; DPO Learnings</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p class="text-sm text-slate-800 leading-relaxed font-semibold"&gt;${chapter.learnings}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>${infographicHtml}</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h4 class="text-xs font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div class="p-1 bg-emerald-50 rounded"&gt;&lt;i data-lucide="list-checks" class="w-4 h-4 text-emerald-500"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>Actionable Checklist</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;ul class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>${checklistHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>${videoHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>contentContainer.innerHTML += cardHtml;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// ADD LEAD CAPTURE SECTION AT THE BOTTOM OF THE LIST</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const leadCaptureHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-16 bg-gradient-to-br from-[#1E2328] to-[#121518] rounded-3xl p-10 shadow-xl border border-slate-700 animate-fade-in-up text-center relative overflow-hidden" style="animation-delay: 0.6s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 h-72 bg-brand-orange rounded-full blur-[100px] opacity-30 pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-20 pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-flex items-center justify-center w-16 h-16 bg-white/5 rounded-2xl border border-white/10 mb-6 backdrop-blur-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="mail" class="w-8 h-8 text-brand-orange"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-3xl font-black text-white mb-4 tracking-tight"&gt;Want to dive deeper?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed"&gt;Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>I'd like to learn more &lt;i data-lucide="arrow-right" class="w-4 h-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>contentContainer.innerHTML += leadCaptureHtml;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Toggle Chapter Accordion</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleChapter(num) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const content = document.getElementById(`content-chapter-${num}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isExpanded = content.classList.contains('expanded');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Auto-close others for a cleaner UX</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.chapter-content').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.classList.remove('expanded');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!isExpanded) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>content.classList.add('expanded');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Global Search Functionality</p>
+<p class="p1"><span class="Apple-converted-space">        </span>searchInput.addEventListener('input', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const term = e.target.value.toLowerCase();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (term === '') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(currentSectionId) selectSection(currentSectionId);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// If searching while on About page, switch header context back</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('content-header').style.display = 'block';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Flatten all chapters to search through everything</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let results = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bookData.forEach(section =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>section.chapters.forEach(chap =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>chap.title.toLowerCase().includes(term) ||<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>chap.context.toLowerCase().includes(term) ||<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>chap.learnings.toLowerCase().includes(term)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>results.push({...chap, sectionName: section.shortTitle});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update UI for Search Results</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('current-section-badge').textContent = 'Global Search';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('current-section-title').textContent = `Found ${results.length} cases`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('current-section-desc').textContent = `Displaying search results for "${term}" across all training modules.`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Remove active state from sidebar</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentSectionId = null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderSidebar();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderChapters(results);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Auto-expand all search results for easier scanning</p>
+<p class="p1"><span class="Apple-converted-space">            </span>results.forEach(r =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const el = document.getElementById(`content-chapter-${r.num}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(el) el.classList.add('expanded');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize App</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Default to 'About Book' section on load</p>
+<p class="p1"><span class="Apple-converted-space">            </span>selectSection('about-book');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
