@@ -120,6 +120,42 @@ The page does not yet have a LinkedIn Insight Tag. This enables visitor tracking
 
 Not yet added. Add tracking IDs to `.env` or directly in `app.html` as needed.
 
+## Swapping the Email Capture Form (e.g. Growthworks)
+
+The chapter gate unlocks when `localStorage.setItem('99b_unlocked', '1')` is called. The current implementation does this inline via the Apps Script form. If you replace the form with a third-party tool like Growthworks, follow these steps:
+
+### How to unlock via redirect URL
+
+The page supports a `?unlocked=1` URL parameter. After a successful form submission, redirect the user to:
+
+```
+https://altoh5.github.io/99-Breaches-Preview/?unlocked=1
+```
+
+The page will automatically:
+1. Detect the `?unlocked=1` parameter on load
+2. Set `localStorage` to unlock all chapters
+3. Strip the parameter from the URL (so sharing the page won't auto-unlock others)
+
+### Steps in Growthworks
+
+1. Create your lead capture form in Growthworks
+2. In the form **Success / Thank You** settings, set the redirect URL to:
+   `https://altoh5.github.io/99-Breaches-Preview/?unlocked=1`
+3. Remove or hide the inline gate form in `app.html` (optional — you can replace the `<form onsubmit="handleGateSubmit...">` block with a link to your Growthworks form)
+4. The chapter unlock will happen automatically when the user lands back on the page after form submission
+
+### Removing the old inline form
+
+In `app.html`, find the `handleGateSubmit` function and the gate form HTML inside `renderChapters`. You can replace the `<form>` block with a button that opens your Growthworks form URL:
+
+```html
+<a href="https://your-growthworks-form-url" target="_blank"
+   class="mt-5 w-full text-center block px-5 py-3 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-orange-600 transition-colors">
+  Get Access — Free →
+</a>
+```
+
 ## Editing Notes
 
 If you update or expand the site:

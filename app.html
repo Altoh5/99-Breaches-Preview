@@ -67,8 +67,24 @@
 
     <style>
         body {
-            background-color: #F8FAFC;
+            background-color: #0f1117;
+            color: #e2e8f0;
         }
+
+        /* Dark theme overrides for chapter cards */
+        .chapter-card {
+            background-color: #1a1d27 !important;
+            border-color: #2d3148 !important;
+        }
+        .chapter-card .text-slate-900, .chapter-card .text-slate-800 { color: #f1f5f9 !important; }
+        .chapter-card .text-slate-700 { color: #cbd5e1 !important; }
+        .chapter-card .text-slate-500, .chapter-card .text-slate-400 { color: #94a3b8 !important; }
+        .chapter-card .bg-white { background-color: #1a1d27 !important; }
+        .chapter-card .bg-slate-50 { background-color: #12151e !important; }
+        .chapter-card .border-slate-100, .chapter-card .border-slate-200 { border-color: #2d3148 !important; }
+        .chapter-card .border-t { border-color: #2d3148 !important; }
+        .chapter-card .group-hover\:bg-orange-50:hover { background-color: rgba(251,146,60,0.1) !important; }
+        .chapter-card .group-hover\:border-orange-200:hover { border-color: rgba(251,146,60,0.3) !important; }
         
         /* Premium Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -180,6 +196,15 @@
             if (banner) {
                 const h = banner.offsetHeight;
                 document.querySelector('.main-content-area, main, #main-content')?.style.setProperty('padding-top', h + 'px');
+            }
+
+            // URL-parameter unlock — for third-party form integrations (e.g. Growthworks)
+            // Redirect your thank-you page to: https://altoh5.github.io/99-Breaches-Preview/?unlocked=1
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('unlocked') === '1') {
+                localStorage.setItem('99b_unlocked', '1');
+                // Clean the URL so sharing doesn't auto-unlock others
+                history.replaceState({}, '', window.location.pathname);
             }
         });
     </script>
@@ -1111,7 +1136,7 @@
                 // Gate chapters beyond FREE_CHAPTERS if not unlocked
                 if (index >= FREE_CHAPTERS && !isUnlocked()) {
                     const gateHtml = `
-                        <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden" style="animation-delay: ${index * 0.08}s">
+                        <div class="chapter-card stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden" style="animation-delay: ${index * 0.08}s">
                             <div class="px-8 py-6 flex items-center justify-between">
                                 <div class="pr-6">
                                     <div class="flex items-center mb-2.5">
