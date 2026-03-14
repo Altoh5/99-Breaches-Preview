@@ -262,7 +262,7 @@
     </aside>
 
     <!-- Left Sidebar (Fixed, 100vh) -->
-    <aside class="w-80 bg-[#0f1117] border-r border-white/10 flex-shrink-0 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.3)] hidden md:flex">
+    <aside id="desktop-sidebar" class="w-80 bg-[#0f1117] border-r border-white/10 flex-shrink-0 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.3)] hidden md:flex">
         <!-- Sidebar Brand Header -->
         <div class="h-16 flex items-center px-6 border-b border-white/10 cursor-pointer hover:bg-white/5 transition-colors" onclick="selectSection('about-book')">
             <div class="flex items-center gap-3">
@@ -1027,14 +1027,14 @@
             contentHeader.style.display = 'none'; // Hide default header for this view
             
             let reviewsHtml = aboutBookData.reviews.map((review, idx) => `
-                <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all h-full flex flex-col justify-between" style="animation-delay: ${(idx * 0.1) + 0.3}s">
+                <div class="stagger-item animate-fade-in-up bg-zinc-900 border border-zinc-700 rounded-2xl p-8 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all h-full flex flex-col justify-between" style="animation-delay: ${(idx * 0.1) + 0.3}s">
                     <div>
-                        <i data-lucide="quote" class="w-8 h-8 text-brand-orange/20 mb-5 fill-brand-orange/10"></i>
-                        <p class="text-sm text-slate-700 font-medium leading-relaxed italic mb-8">"${review.quote}"</p>
+                        <i data-lucide="quote" class="w-8 h-8 text-brand-orange/30 mb-5 fill-brand-orange/10"></i>
+                        <p class="text-sm text-zinc-300 font-medium leading-relaxed italic mb-8">"${review.quote}"</p>
                     </div>
-                    <div class="border-t border-slate-100 pt-5">
-                        <p class="font-bold text-slate-900 text-sm">${review.author}</p>
-                        <p class="text-xs text-slate-500 font-medium mt-1">${review.title}</p>
+                    <div class="border-t border-zinc-700 pt-5">
+                        <p class="font-bold text-white text-sm">${review.author}</p>
+                        <p class="text-xs text-zinc-400 font-medium mt-1">${review.title}</p>
                     </div>
                 </div>
             `).join('');
@@ -1144,33 +1144,33 @@
                 // Gate chapters beyond FREE_CHAPTERS if not unlocked
                 if (index >= FREE_CHAPTERS && !isUnlocked()) {
                     const gateHtml = `
-                        <div class="chapter-card stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden" style="animation-delay: ${index * 0.08}s">
+                        <div class="chapter-card stagger-item animate-fade-in-up bg-[#1a2035] border border-white/10 rounded-2xl shadow-sm overflow-hidden" style="animation-delay: ${index * 0.08}s">
                             <div class="px-8 py-6 flex items-center justify-between">
                                 <div class="pr-6">
                                     <div class="flex items-center mb-2.5">
-                                        <span class="text-xs font-extrabold text-slate-400 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                        <span class="text-xs font-extrabold text-slate-500 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-slate-400">${chapter.title}</h3>
                                 </div>
-                                <div class="flex-shrink-0 w-10 h-10 bg-slate-50 flex items-center justify-center rounded-xl border border-slate-100">
-                                    <i data-lucide="lock" class="w-5 h-5 text-slate-300"></i>
+                                <div class="flex-shrink-0 w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl border border-white/10">
+                                    <i data-lucide="lock" class="w-5 h-5 text-slate-500"></i>
                                 </div>
                             </div>
-                            <div class="px-8 pb-6 border-t border-slate-100">
+                            <div class="px-8 pb-6 border-t border-white/10">
                                 <div class="relative overflow-hidden rounded-xl mt-4">
-                                    <div class="blur-sm select-none pointer-events-none p-4 bg-slate-50 text-sm text-slate-500 leading-relaxed">
+                                    <div class="blur-sm select-none pointer-events-none p-4 bg-white/5 text-sm text-slate-500 leading-relaxed">
                                         Unlock this chapter to read the full case study, DPO learnings, infographic, and action checklist. Enter your email below to get access to all ${chapters.length > FREE_CHAPTERS ? 'remaining' : ''} chapters.
                                     </div>
-                                    <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
+                                    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
                                 </div>
                                 ${index === FREE_CHAPTERS ? `
-                                <div class="mt-5 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-xl p-5">
-                                    <p class="text-sm font-bold text-slate-800 mb-3">🔓 Unlock all ${chapters.length} chapters — free</p>
+                                <div class="mt-5 bg-orange-900/20 border border-orange-700/30 rounded-xl p-5">
+                                    <p class="text-sm font-bold text-slate-200 mb-3">🔓 Unlock all ${chapters.length} chapters — free</p>
                                     <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleGateSubmit(event, this)">
-                                        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-2.5 rounded-lg border border-orange-200 bg-white text-sm font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange">
+                                        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-2.5 rounded-lg border border-orange-700/50 bg-slate-800 text-sm font-medium text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange">
                                         <button type="submit" class="px-5 py-2.5 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-orange-600 transition-colors whitespace-nowrap">Get Access →</button>
                                     </form>
-                                </div>` : '<p class="text-xs text-slate-400 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
+                                </div>` : '<p class="text-xs text-slate-500 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
                             </div>
                         </div>`;
                     contentContainer.innerHTML += gateHtml;
@@ -1182,17 +1182,17 @@
                 const videoBadge = hasVideo ? `<span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-bold bg-brand-orange/10 text-brand-orange border border-brand-orange/20 tracking-wide uppercase"><i data-lucide="play" class="w-3 h-3 mr-1 fill-current"></i> Video Lesson</span>` : '';
 
                 const checklistHtml = chapter.checklists.map(item =>
-                    `<li class="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                        <div class="mt-0.5 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
-                            <i data-lucide="check" class="w-3 h-3 text-emerald-600 stroke-[3]"></i>
+                    `<li class="flex items-start gap-3 text-sm text-slate-300 font-medium">
+                        <div class="mt-0.5 w-5 h-5 rounded-full bg-emerald-900/40 flex items-center justify-center flex-shrink-0 border border-emerald-700/50">
+                            <i data-lucide="check" class="w-3 h-3 text-emerald-400 stroke-[3]"></i>
                         </div>
                         <span class="leading-relaxed">${item}</span>
                     </li>`
                 ).join('');
 
                 const videoHtml = hasVideo ? `
-                    <div class="mt-10 pt-8 border-t border-slate-100">
-                        <h4 class="text-sm font-extrabold text-slate-900 mb-5 flex items-center gap-2 uppercase tracking-wider">
+                    <div class="mt-10 pt-8 border-t border-white/10">
+                        <h4 class="text-sm font-extrabold text-slate-200 mb-5 flex items-center gap-2 uppercase tracking-wider">
                             <div class="p-1.5 bg-brand-orange/10 rounded-lg"><i data-lucide="monitor-play" class="w-4 h-4 text-brand-orange"></i></div>
                             ${chapter.videoTitle || 'Interactive Training'}
                         </h4>
@@ -1205,46 +1205,46 @@
                 const infographicHtml = chapter.infographic ? chapter.infographic : '';
 
                 const cardHtml = `
-                    <div class="chapter-card stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s">
+                    <div class="chapter-card stagger-item animate-fade-in-up bg-zinc-900 border border-zinc-700 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-500 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s">
                         <button class="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none" onclick="toggleChapter(${chapter.num})">
                             <div class="pr-6">
                                 <div class="flex items-center mb-2.5">
-                                    <span class="text-xs font-extrabold text-slate-400 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                    <span class="text-xs font-extrabold text-zinc-500 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
                                     ${videoBadge}
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-orange transition-colors">${chapter.title}</h3>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">${chapter.title}</h3>
                             </div>
-                            <div class="flex-shrink-0 w-10 h-10 bg-slate-50 flex items-center justify-center rounded-xl border border-slate-100 group-hover:bg-orange-50 group-hover:border-orange-200 transition-colors shadow-xs">
-                                <i data-lucide="chevron-down" id="icon-chapter-${chapter.num}" class="w-5 h-5 text-slate-500 group-hover:text-brand-orange chevron-icon"></i>
+                            <div class="flex-shrink-0 w-10 h-10 bg-zinc-800 flex items-center justify-center rounded-xl border border-zinc-700 group-hover:bg-orange-900/30 group-hover:border-orange-700 transition-colors shadow-xs">
+                                <i data-lucide="chevron-down" id="icon-chapter-${chapter.num}" class="w-5 h-5 text-zinc-400 group-hover:text-brand-orange chevron-icon"></i>
                             </div>
                         </button>
                         
-                        <div id="content-chapter-${chapter.num}" class="chapter-content bg-slate-50/30">
+                        <div id="content-chapter-${chapter.num}" class="chapter-content bg-zinc-950/50">
                             <div class="chapter-inner px-8 pb-8 pt-2">
                                 
                                 <div class="grid lg:grid-cols-2 gap-6 mb-8">
-                                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs relative overflow-hidden">
-                                        <div class="absolute top-0 left-0 w-1.5 h-full bg-slate-300"></div>
-                                        <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                            <i data-lucide="book-open" class="w-4 h-4 text-slate-400"></i> The Context
+                                    <div class="bg-zinc-800 p-6 rounded-xl border border-zinc-700 shadow-xs relative overflow-hidden">
+                                        <div class="absolute top-0 left-0 w-1.5 h-full bg-zinc-600"></div>
+                                        <h4 class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                            <i data-lucide="book-open" class="w-4 h-4 text-zinc-500"></i> The Context
                                         </h4>
-                                        <p class="text-sm text-slate-700 font-medium leading-relaxed">${chapter.context}</p>
+                                        <p class="text-sm text-zinc-300 font-medium leading-relaxed">${chapter.context}</p>
                                     </div>
 
-                                    <div class="bg-orange-50/50 p-6 rounded-xl border border-orange-100 shadow-xs relative overflow-hidden">
+                                    <div class="bg-orange-950/30 p-6 rounded-xl border border-orange-900/50 shadow-xs relative overflow-hidden">
                                         <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-orange"></div>
                                         <h4 class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-3 flex items-center gap-2">
                                             <i data-lucide="lightbulb" class="w-4 h-4 fill-brand-orange/20"></i> DPO Learnings
                                         </h4>
-                                        <p class="text-sm text-slate-800 leading-relaxed font-semibold">${chapter.learnings}</p>
+                                        <p class="text-sm text-zinc-200 leading-relaxed font-semibold">${chapter.learnings}</p>
                                     </div>
                                 </div>
                                 
                                 ${infographicHtml}
                                 
-                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
-                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2">
-                                        <div class="p-1 bg-emerald-50 rounded"><i data-lucide="list-checks" class="w-4 h-4 text-emerald-500"></i></div>
+                                <div class="bg-zinc-800 p-6 rounded-xl border border-zinc-700 shadow-xs">
+                                    <h4 class="text-xs font-bold text-zinc-200 uppercase tracking-widest mb-5 flex items-center gap-2">
+                                        <div class="p-1 bg-emerald-900/30 rounded"><i data-lucide="list-checks" class="w-4 h-4 text-emerald-400"></i></div>
                                         Actionable Checklist
                                     </h4>
                                     <ul class="space-y-3">
