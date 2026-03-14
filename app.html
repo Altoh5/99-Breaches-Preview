@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 Privacy Breaches | Data Protection Excellence Network Resource</title>
+    
+    <!-- Google Fonts: Inter for high-contrast SaaS typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#E8631A',
+                            charcoal: '#1E2328',
+                            light: '#F8FAFC', 
+                            border: '#E2E8F0',
+                        }
+                    },
+                    boxShadow: {
+                        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+                        'sm': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(232, 99, 26, 0.04)',
+                        'glow': '0 0 0 3px rgba(232, 99, 26, 0.15)',
+                    },
+                    animation: {
+                        'fade-in-up': 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        slideUpFade: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8FAFC;
+        }
+        
+        /* Premium Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 99px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+
+        /* SaaS Accordion Transitions */
+        .chapter-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chapter-content.expanded {
+            grid-template-rows: 1fr;
+        }
+        .chapter-inner {
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .chapter-content.expanded .chapter-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Icon Rotations */
+        .chevron-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .expanded .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        /* True Glassmorphism Header */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Responsive iframe wrapper for Google Drive videos */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #1E2328;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
+            border-radius: 12px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Sidebar active gradient */
+        .nav-item.active {
+            background: linear-gradient(to right, #FFF0E8, transparent);
+            border-left-color: #E8631A;
+            color: #E8631A;
+            font-weight: 700;
+        }
+        
+        /* Staggered initial load hiding */
+        .stagger-item {
+            opacity: 0;
+        }
+
+        /* Book Cover Shadow Effect */
+        .book-shadow {
+            box-shadow: -5px 0px 10px rgba(0,0,0,0.05), 15px 15px 30px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden bg-brand-light">
+
+    <!-- Left Sidebar (Fixed, 100vh) -->
+    <aside class="w-80 bg-white border-r border-brand-border flex-shrink-0 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.02)] hidden md:flex">
+        <!-- Sidebar Brand Header -->
+        <div class="h-16 flex items-center px-6 border-b border-brand-border cursor-pointer hover:bg-slate-50 transition-colors" onclick="selectSection('about-book')">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-10 flex-shrink-0 shadow-sm border border-slate-200 rounded overflow-hidden">
+                    <img src="https://images-na.ssl-images-amazon.com/images/P/9814794643.01._SCLZZZZZZZ_.jpg" alt="Book Cover Icon" class="w-full h-full object-cover block">
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-900">99 Privacy <span class="text-brand-orange">Breaches</span></span>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto custom-scrollbar">
+            <div class="p-6 pb-2">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4">Overview</p>
+            </div>
+            
+            <!-- About Book Link -->
+            <div class="px-3 mb-4">
+                <button id="nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold group transition-all" onclick="selectSection('about-book')">
+                    <span class="flex items-center gap-3"><i data-lucide="book" class="w-4 h-4"></i> About the Book</span>
+                    <i id="about-book-icon" data-lucide="chevron-right" class="transition-transform opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 w-4 h-4 flex-shrink-0"></i>
+                </button>
+            </div>
+
+            <div class="px-6 pb-2 border-t border-brand-border pt-6">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4">Areas to beware of</p>
+            </div>
+            
+            <nav class="px-3 space-y-1 pb-6" id="sidebar-nav">
+                <!-- Nav items injected via JS -->
+            </nav>
+        </div>
+        
+        <div class="p-5 border-t border-brand-border bg-slate-50/80">
+            <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-bold bg-white border border-slate-200 text-slate-800 hover:border-brand-orange hover:text-brand-orange hover:shadow-sm transition-all group">
+                <i data-lucide="shopping-bag" class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform"></i>
+                Purchase the Book
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main App Layout -->
+    <div class="flex-1 flex flex-col relative min-w-0">
+        
+        <!-- Top Navigation (Absolute & Sticky over scrolling content) -->
+        <header class="absolute top-0 left-0 w-full z-50 glass-header border-b border-slate-200/80 h-16 flex items-center px-6 md:px-10 justify-between">
+            <div class="flex items-center gap-4">
+                <a href="https://dpexnetwork.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white text-slate-700 border border-slate-200 tracking-wider uppercase hover:text-brand-orange hover:border-orange-200 hover:shadow-sm transition-all">
+                    <span class="w-2 h-2 rounded-full bg-brand-orange mr-2"></span>
+                    Data Protection Excellence Network Resource
+                </a>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center bg-white/60 rounded-xl px-4 py-2 border border-slate-200 focus-within:border-brand-orange focus-within:bg-white focus-within:shadow-glow transition-all duration-300 w-80 group">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 group-focus-within:text-brand-orange transition-colors"></i>
+                    <input type="text" id="searchInput" placeholder="Search cases, learnings, keywords..." class="bg-transparent border-none outline-none text-sm w-full text-slate-800 font-medium placeholder-slate-400 ml-3">
+                </div>
+                
+                <div class="flex items-center gap-4 border-l border-slate-200 pl-6">
+                    <button class="text-slate-400 hover:text-brand-orange transition-colors">
+                        <i data-lucide="bell" class="w-5 h-5"></i>
+                    </button>
+                    <div class="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-brand-charcoal hover:ring-2 hover:ring-offset-2 hover:ring-brand-orange transition-all shadow-sm">
+                        DPO
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Right Content Pane (Scrolls underneath header) -->
+        <main class="flex-1 overflow-y-auto custom-scrollbar pt-24 pb-12 px-6 md:px-12 lg:px-20 relative" id="main-content">
+            
+            <!-- Abstract background graphic for main content -->
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-orange-50 to-transparent rounded-full blur-[100px] opacity-80 pointer-events-none -z-10"></div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Dynamic Header -->
+                <div class="mb-12 pb-8 border-b border-slate-200/80" id="content-header">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span id="current-section-badge" class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-orange-100 text-brand-orange uppercase tracking-widest">
+                            Select an Area
+                        </span>
+                    </div>
+                    <h1 id="current-section-title" class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-[1.1]">
+                        Operational Compliance Hub
+                    </h1>
+                    <p id="current-section-desc" class="text-slate-600 text-lg md:text-xl font-medium leading-relaxed max-w-3xl">
+                        Select an area from the sidebar to explore real-world privacy breach cases, actionable DPO learnings, and accompanying video lessons.
+                    </p>
+                </div>
+
+                <!-- Content Container (Injects Chapters OR About Book) -->
+                <div id="content-container" class="space-y-6">
+                    <!-- Content injected via JS -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        /* * ABOUT THE BOOK DATA
+         */
+        const aboutBookData = {
+            id: 'about-book',
+            shortTitle: 'About the Book',
+            fullTitle: '99 Privacy Breaches to Beware Of',
+            description: 'Practical Data Protection Tips from Real-Life Experiences',
+            coverImage: 'https://images-na.ssl-images-amazon.com/images/P/9814794643.01._SCLZZZZZZZ_.jpg', 
+            summary: `Today, an increasing number of jurisdictions require notification of data breaches to relevant supervisory authorities. The details of the laws differ widely, but the mistakes that lead to breaches are the same wherever they happen - for example, you had a 'bad day' and clicked the wrong button, giving an employee's ex-wife access to his health data, or you accidentally sent the data of one of your students to 1,900 parents.<br><br>The authors have gathered hundreds of hints in 99 chapters that will help you develop all the procedures you need to avoid data breaches without having to read all the legislation.`,
+            reviews: [
+                {
+                    quote: "This book is exceptional on a number of levels. Well-written and logically constructed, it draws upon the experience of the authors to provide a roadmap for addressing day-to-day privacy issues at a pragmatic level.",
+                    author: "Gordon Hughes",
+                    title: "Partner, Davies Collison Cave, Melbourne"
+                },
+                {
+                    quote: "Finally, a book focusing on operational practice, rather than the law, has been written. I wholeheartedly endorse this comprehensive and practical effort and hope it will become the standard bible for data protection practices.",
+                    author: "Dr Toh See Kiat",
+                    title: "Veteran Lawyer in Data Protection & Former MP of Singapore"
+                },
+                {
+                    quote: "Much has been written previously for compliance officers, privacy professionals and lawyers... But this handbook is for the layperson - easy to read and practical. It fills in many gaps and answers many questions about how to comply.",
+                    author: "Prof. Abu Bakar Munir",
+                    title: "Author of Data Protection Law in Asia"
+                },
+                {
+                    quote: "This book achieves a rare feat: making personal data protection practical, understandable and actionable. It is a valuable resource for marketers at all levels.",
+                    author: "Lisa Watson",
+                    title: "Chairman, Direct Marketing Association of Singapore"
+                }
+            ]
+        };
+
+        /* * BOOK CHAPTERS DATA (All 8 Categories)
+         */
+        const bookData = [
+            {
+                id: 'sec-a',
+                shortTitle: 'Governance & Asset Mgmt',
+                fullTitle: 'Section A: Governance & Information Asset Management',
+                description: 'Foundational matters for establishing a privacy program. Learn to identify and manage the lifecycle of physical and digital assets before a breach occurs.',
+                chapters: [
+                    {
+                        num: 1,
+                        title: 'Data protection: don\'t forget that it is also physical',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Data protection - don’t forget that it is also physical',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/RdQAxeZjwt0',
+                        context: 'While organizations heavily invest in firewalls and network security, they often forget the massive amount of paper documents containing personal, confidential, or sensitive information. Common issues include official documents (like land titles or marriage certificates), meeting notes, and application forms left unattended on desks or improperly stored.',
+                        learnings: 'A DPO must map the physical "document life cycle" (Create, Store, Use/Share, Disclose, Dispose). Creating a document flow diagram helps identify physical vulnerabilities (e.g., the handover point between departments). Legal compliance is useless if an unauthorized cleaner or visitor can simply pick up a confidential file from an unlocked desk.',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8 text-center">The Physical Document Life Cycle</h4>
+                                <div class="flex flex-col sm:flex-row items-center justify-between gap-2 relative">
+                                    <div class="hidden sm:block absolute top-1/2 left-6 right-6 h-0.5 bg-slate-100 -z-10 -translate-y-1/2"></div>
+                                    <div class="flex flex-col items-center bg-white z-10 px-2 group">
+                                        <div class="w-14 h-14 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"><i data-lucide="file-plus-2" class="w-6 h-6"></i></div>
+                                        <span class="text-xs font-bold text-slate-700">Create</span>
+                                    </div>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"></i>
+                                    <div class="flex flex-col items-center bg-white z-10 px-2 group">
+                                        <div class="w-14 h-14 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"><i data-lucide="archive" class="w-6 h-6"></i></div>
+                                        <span class="text-xs font-bold text-slate-700">Store</span>
+                                    </div>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"></i>
+                                    <div class="flex flex-col items-center bg-white z-10 px-2 group">
+                                        <div class="w-14 h-14 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"><i data-lucide="users" class="w-6 h-6"></i></div>
+                                        <span class="text-xs font-bold text-slate-700">Use/Share</span>
+                                    </div>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"></i>
+                                    <div class="flex flex-col items-center bg-white z-10 px-2 group">
+                                        <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"><i data-lucide="send" class="w-6 h-6"></i></div>
+                                        <span class="text-xs font-bold text-slate-700">Disclose</span>
+                                    </div>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 sm:hidden"></i>
+                                    <div class="flex flex-col items-center bg-white z-10 px-2 group">
+                                        <div class="w-14 h-14 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-3 shadow-xs group-hover:scale-105 transition-transform"><i data-lucide="trash-2" class="w-6 h-6"></i></div>
+                                        <span class="text-xs font-bold text-slate-700">Dispose</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Document the physical document life cycle and create a flow diagram.',
+                            'Maintain an up-to-date document inventory.',
+                            'Implement and clearly mark an agreed document classification scheme (e.g., "Confidential").',
+                            'Carry out regular onsite audits to check if employees are locking cabinets.'
+                        ]
+                    },
+                    {
+                        num: 3,
+                        title: 'Designing privacy into information systems and processes',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'An organization implemented a new ATM greeting that displayed "Welcome [Customer Name]" in huge letters. Another deployed a ticketless parking system that tracked vehicle movements via SMS without verifying user identities. In both cases, convenience and cool features were prioritized, completely ignoring the privacy implications of exposing data in public or allowing unauthorized tracking.',
+                        learnings: 'DPOs must champion "Privacy by Design" (PbD) from Dr. Ann Cavoukian. Privacy should not be an afterthought retrofitted just before a product launch. Privacy must be the default setting. Software developers and process engineers must be trained to specify privacy requirements during the initial design phase.',
+                        infographic: `
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs">
+                                    <div class="w-12 h-12 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-alert" class="w-6 h-6 text-emerald-600"></i></div>
+                                    <h5 class="text-sm font-bold text-slate-900 mb-2">Proactive</h5>
+                                    <p class="text-sm text-slate-600 leading-relaxed font-medium">Preventative, not remedial. Anticipate privacy risks before they happen.</p>
+                                </div>
+                                <div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs">
+                                    <div class="w-12 h-12 bg-blue-50 rounded-xl border border-blue-100 flex items-center justify-center mx-auto mb-4"><i data-lucide="toggle-left" class="w-6 h-6 text-blue-600"></i></div>
+                                    <h5 class="text-sm font-bold text-slate-900 mb-2">Default Setting</h5>
+                                    <p class="text-sm text-slate-600 leading-relaxed font-medium">Maximum privacy automatically applied without user action.</p>
+                                </div>
+                                <div class="bg-white border border-slate-200 p-6 rounded-xl text-center shadow-xs">
+                                    <div class="w-12 h-12 bg-purple-50 rounded-xl border border-purple-100 flex items-center justify-center mx-auto mb-4"><i data-lucide="layers" class="w-6 h-6 text-purple-600"></i></div>
+                                    <h5 class="text-sm font-bold text-slate-900 mb-2">Embedded</h5>
+                                    <p class="text-sm text-slate-600 leading-relaxed font-medium">Privacy becomes an essential component of the core functionality.</p>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Design privacy into information systems and processes from day one.',
+                            'Ensure Privacy is the default setting (e.g., names hidden by default unless opted in).',
+                            'Mandate Privacy Impact Assessments (PIAs) before launching new features.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-b',
+                shortTitle: 'Collection of Personal Data',
+                fullTitle: 'Section B: Collection of Personal Data',
+                description: 'The overriding principle is that the collection of personal data should be lawful, limited, and based on clear consent.',
+                chapters: [
+                    {
+                        num: 8,
+                        title: 'Are your sales and service counters compliant?',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Are your sales and service counters compliant with the data protection law?',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/YQ_G49qL2hA',
+                        context: 'At an electronics store, a salesperson asked a customer for their full name, address, and Identity Card (IC) number just to buy a product. The data was written on a scrap piece of paper which was then left beside the Point of Sale (POS) system for the next customer to see. Additionally, the POS computer screen was angled so anyone could see previous customers\' purchase histories.',
+                        learnings: 'Frontline staff are the weakest link if not properly trained. DPOs must realize that legal paperwork is insufficient if operational practices fail. Organizations must establish strict rules against collecting excessive data (like IC numbers for simple retail purchases) and enforce strict physical security around POS systems.',
+                        infographic: `
+                            <div class="flex flex-col sm:flex-row gap-6 mb-8">
+                                <div class="flex-1 bg-white border-2 border-red-100 p-6 rounded-xl shadow-xs relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1.5 h-full bg-red-400"></div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="p-2 bg-red-50 rounded-lg"><i data-lucide="x-octagon" class="w-6 h-6 text-red-500"></i></div>
+                                        <h5 class="text-base font-bold text-slate-900">The Wrong Way</h5>
+                                    </div>
+                                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"></i> Asking for IC/SSN for basic purchases</li>
+                                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"></i> Writing details on scrap paper</li>
+                                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 mt-0.5 text-red-500"></i> POS screens visible to the public</li>
+                                    </ul>
+                                </div>
+                                <div class="flex-1 bg-white border-2 border-emerald-100 p-6 rounded-xl shadow-xs relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1.5 h-full bg-emerald-400"></div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="p-2 bg-emerald-50 rounded-lg"><i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-500"></i></div>
+                                        <h5 class="text-base font-bold text-slate-900">The Right Way</h5>
+                                    </div>
+                                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"></i> Minimum viable data collection</li>
+                                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"></i> Direct entry into secure POS</li>
+                                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-500"></i> Privacy screens on monitors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Avoid using scraps of paper to record personal data.',
+                            'Tilt computer screens or use privacy filters so POS data is hidden from public view.',
+                            'Do not collect IC numbers unless legally or strictly operationally required.',
+                            'Do not leave invoices or receipts in open trays.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-c',
+                shortTitle: 'Usage of Personal Data',
+                fullTitle: 'Section C: Usage of Personal Data',
+                description: 'Usage is limited by the purpose notified to the individual. Understand the perils of secondary usage, insecure file sharing, and the dangers lurking in digital copiers.',
+                chapters: [
+                    {
+                        num: 28,
+                        title: 'Anonymising personal data but is the individual really not identifiable?',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'Organizations often anonymize data for research or secondary purposes. However, many just strip out the name and assume it is safe. Knowing just three pieces of information—birth date, zip code, and gender—can re-identify individuals with a high degree of certainty by matching them against public records.',
+                        learnings: 'Anonymization is complex and often implemented incorrectly. DPOs must understand that pseudonymization is not anonymization. If a "key" exists to re-link the data, it is still personal data. True anonymization requires irreversible destruction of the link.',
+                        infographic: '',
+                        checklists: [
+                            'Remove unique identifiers, and consider aggregating or generalizing data.',
+                            'Do not assume anonymity is safe; test against public record matching.',
+                            'Implement strict retention policies for the "keys" if using pseudonymization.'
+                        ]
+                    },
+                    {
+                        num: 38,
+                        title: 'Watch your spreadsheet – spreading personal data',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Hitting the “send” button and regretting it',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/C-PrLkMJKa0',
+                        context: 'An employee accidentally attached a spreadsheet containing names, SSNs, and health info of 1,900 pupils to an email sent to parents. The employee had intended to send a simple update but attached the master tracking file instead.',
+                        learnings: 'Spreadsheets are the hidden threat of the digital office. They easily hold millions of rows of data and bypass complex IT security. DPOs must enforce strict spreadsheet hygiene, including password-protecting individual files and strictly auditing email attachments.',
+                        infographic: '',
+                        checklists: [
+                            'Password-protect all spreadsheets containing personal data.',
+                            'Double-check attachments before hitting "Send".',
+                            'Use DLP (Data Loss Prevention) software to block unencrypted spreadsheets from leaving the network.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-d',
+                shortTitle: 'Data Accuracy & Integrity',
+                fullTitle: 'Section D: Data Accuracy & Integrity',
+                description: 'Organizations are legally required to ensure the personal data they hold is accurate, especially when used to make decisions affecting individuals.',
+                chapters: [
+                    {
+                        num: 40,
+                        title: 'Identity verification – the wrong way',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'A bank customer approached a trainee teller due to an ATM card error. The trainee pulled up the record and asked: "Sir, is your name John Doe? Is your NRIC number S1234567A? Is your date of birth 01/01/1980?" The customer simply answered "YES" to all three, and was issued a new card.',
+                        learnings: 'Leading questions feed the answers to potential fraudsters. If a malicious actor found a lost ATM card, they could easily agree with the teller and hijack the account. DPOs must train customer-facing staff to ask open-ended questions: "What is your name? What is your ID number?"',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                                <div class="flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-slate-200 pb-6 md:pb-0 md:pr-8">
+                                    <div class="inline-flex items-center justify-center w-14 h-14 bg-slate-100 rounded-xl mb-4 border border-slate-200 shadow-xs">
+                                        <i data-lucide="user-cog" class="w-7 h-7 text-slate-600"></i>
+                                    </div>
+                                    <p class="text-base font-bold text-slate-900">Teller asks:</p>
+                                    <p class="text-sm font-medium text-slate-500 italic mt-2">"Is your ID S1234567A?"</p>
+                                </div>
+                                <div class="bg-red-50 p-6 rounded-xl flex-1 text-center border border-red-100 shadow-xs">
+                                    <i data-lucide="alert-triangle" class="w-8 h-8 text-red-500 mx-auto mb-3"></i>
+                                    <p class="text-base font-bold text-red-900">Fraudster replies:</p>
+                                    <p class="text-sm text-red-600 font-bold mt-2">"YES"</p>
+                                    <p class="text-[11px] font-bold text-red-500 mt-3 uppercase tracking-widest">Data Breached</p>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Force the customer to supply their own personal data, then verify it against records.',
+                            'Train frontline and call center staff on exact phrasing for verification questions.',
+                            'Audit verification processes regularly via mystery shopping.'
+                        ]
+                    },
+                    {
+                        num: 41,
+                        title: 'Identity verification – the right way',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Identity Verification | The Right Way',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/krnbhbY_I_Q',
+                        context: 'A customer called a bank to activate a new card. The Customer Service Officer asked standard NRIC and DOB questions, but then asked an internal question: "Which year did you open your account with us?" When the customer couldn\'t remember, the CSO politely refused to process the request over the phone and asked the customer to visit a branch with their ID.',
+                        learnings: 'Basic data like DOB and ID numbers are often easily found online or on social media. DPOs should implement multi-factor authentication or dynamic verification questions (e.g., "How many active cards do you hold with us?") that only the true customer would know. A minor customer inconvenience is far better than a major data breach.',
+                        infographic: `
+                            <div class="bg-slate-900 rounded-xl p-8 mb-8 text-white flex flex-col md:flex-row items-center gap-8 shadow-lg">
+                                <div class="flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-slate-700 pb-6 md:pb-0 md:pr-8">
+                                    <p class="text-base font-bold text-slate-200 mb-4">Multi-Factor Approach</p>
+                                    <div class="flex justify-center md:justify-end gap-3 items-center">
+                                        <span class="px-3 py-1.5 bg-slate-800 text-xs font-semibold rounded-md border border-slate-700 shadow-inner">Standard ID</span>
+                                        <span class="text-slate-500 font-black">+</span>
+                                        <span class="px-3 py-1.5 bg-brand-orange text-xs font-bold rounded-md shadow-[0_0_10px_rgba(232,99,26,0.3)]">Dynamic Qs</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <div class="inline-flex items-center justify-center w-14 h-14 bg-emerald-500/20 rounded-xl border border-emerald-500/40 mb-3 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                                        <i data-lucide="shield-check" class="w-7 h-7 text-emerald-400"></i>
+                                    </div>
+                                    <p class="text-base font-bold text-emerald-400">Access Granted</p>
+                                    <p class="text-sm font-medium text-slate-400 mt-1">Identity definitively proven</p>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Go beyond standard NRIC/DOB questions for phone verification.',
+                            'Include questions related to the customer\'s unique transaction history.',
+                            'Train staff to confidently deny service if verification fails, without fear of customer anger.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-e',
+                shortTitle: 'Physical & Env Security',
+                fullTitle: 'Section E: Physical & Environmental Security',
+                description: 'The clean desk way to data privacy. Mitigate risks associated with public computer terminals, open office layouts, and smart devices.',
+                chapters: [
+                    {
+                        num: 49,
+                        title: 'Clean desk way to data privacy',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Lock it or lose it',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/IDQpk5rXPGY',
+                        context: 'A messy desk can hide missing access cards or expose confidential documents to cleaning staff after hours. A Clean Desk Policy ensures sensitive materials are locked away when the workspace is unoccupied.',
+                        learnings: 'Physical environment security is just as critical as firewalls. DPOs must enforce clean desk policies to prevent "shoulder surfing" and unauthorized after-hours access.',
+                        infographic: '',
+                        checklists: [
+                            'Clear all personal data and confidential info when leaving your desk.',
+                            'Lock computer screens when stepping away.',
+                            'Do not leave security devices (access passes) unattended.'
+                        ]
+                    },
+                    {
+                        num: 51,
+                        title: 'Open office, open invitation to snoop',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'Modern open-plan offices improve teamwork but allow employees from different departments to peer over cubicle walls to see what others are working on, including highly confidential HR or Finance files.',
+                        learnings: 'Office layouts must consider "need to know" access. DPOs should advise that departments handling highly sensitive data (like HR and Finance) be housed in separate, access-controlled rooms with locked doors.',
+                        infographic: '',
+                        checklists: [
+                            'Require employees to practice self-safeguarding of documents in open areas.',
+                            'House employees handling highly sensitive information in restricted access rooms.',
+                            'Restrict visitor movement to the waiting area unless escorted.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-f',
+                shortTitle: 'Security, Storage & Disposal',
+                fullTitle: 'Section F: Security, Storage, Retention & Disposal',
+                description: 'Protecting data on mobile devices, securely handling USB drives, regular email housekeeping, and the critical importance of secure shredding.',
+                chapters: [
+                    {
+                        num: 62,
+                        title: 'Beware - don\'t lose your USB drive',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Beware - don’t ever lose or misplace your USB drive or other portable storage device',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/i_rP-44Kqgw',
+                        context: 'Surveys revealed thousands of USB drives are left in laundromats, taxis, and airports every year. A local government was fined £80,000 after a teacher lost an unencrypted USB stick containing sensitive data of children.',
+                        learnings: 'Portable storage is highly vulnerable to loss. DPOs must enforce mandatory encryption for all portable drives or outright ban their usage. The BYOD (Bring Your Own Device) policy must strictly dictate how data is transferred.',
+                        infographic: '',
+                        checklists: [
+                            'Protect USB drives with strong passwords and hardware encryption.',
+                            'Delete sensitive documents from portable storage when no longer needed.',
+                            'Scan all external drives for malware before connecting to the network.'
+                        ]
+                    },
+                    {
+                        num: 73,
+                        title: 'A-tearing we will go (Shredding)',
+                        hasVideo: true,
+                        videoTitle: 'Related video: A-tearing we will go',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/dN87mJ3ryNk',
+                        context: 'Employees often just tear documents in half and throw them in the wastepaper basket because the shredder is "too far away". These pieces can easily be retrieved and pieced back together by unauthorized individuals.',
+                        learnings: 'Secure disposal is legally mandated. Merely tearing papers is a compliance failure. DPOs should implement a "shred all" policy to eliminate employee guesswork about what constitutes confidential data, using high-quality cross-cut shredders or secure disposal services.',
+                        infographic: '',
+                        checklists: [
+                            'Adopt a "shred all" policy for all office paper waste.',
+                            'Invest in cross-cut shredders or secure, locked document disposal bins.',
+                            'Do not place unshredded papers next to the shredder if employees are "too busy".'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-g',
+                shortTitle: 'Disclosure of Personal Data',
+                fullTitle: 'Section G: Disclosure of Personal Data',
+                description: 'Learn boundaries for disclosing data to agents, handling HR warnings, and avoiding accidental disclosures via CCTV, social media, or notice boards.',
+                chapters: [
+                    {
+                        num: 80,
+                        title: 'CCTV footage - to show or not to show',
+                        hasVideo: true,
+                        videoTitle: 'Related video: CCTV footage – To Show or Not To Show… and To Warn?',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/UFrSky6WcOo',
+                        context: 'An individual requested CCTV footage from a property manager showing their car being scratched. The manager handed over the raw footage, which included the clear faces of numerous other uninvolved residents going about their day.',
+                        learnings: 'CCTV footage capturing human faces is personal data. While data subjects have a right to access their own data, organizations cannot violate the privacy of others in the footage. DPOs must establish workflows to "mask" or blur other individuals before releasing footage.',
+                        infographic: '',
+                        checklists: [
+                            'Display prominent signs informing visitors that CCTV is in operation.',
+                            'Verify the purpose of an access request to weed out frivolous ones.',
+                            'Mask or blur faces of other identifiable individuals before releasing footage.'
+                        ]
+                    },
+                    {
+                        num: 86,
+                        title: 'Watch what you say about your employees or clients',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Think Twice before disclosing employees\' personal data',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/MtAfp-cpa98',
+                        context: 'A kindergarten headmistress disclosed an employee\'s divorced status to colleagues without consent. An employee complained, and the regulator ruled the disclosure was completely unrelated to the original HR purpose of collecting the data.',
+                        learnings: 'Careless gossip, even with good intent, is an unauthorized disclosure of personal data. DPOs must train managers and staff to treat colleague and client information with strict confidentiality and enforce acceptable use policies for internal communications.',
+                        infographic: '',
+                        checklists: [
+                            'Watch what you say (or write) about another individual, even with good intent.',
+                            'Ensure employees are trained on their obligations under the data protection law.',
+                            'Develop and implement relevant policies if your organization uses chat rooms or social media.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'sec-h',
+                shortTitle: 'New Areas & Tech Concerns',
+                fullTitle: 'Section H: New Areas, Developments and Technological Concerns',
+                description: 'Handling modern challenges: Appointing a Data Protection Officer, ransomware threats, IoT vulnerabilities, and the gig economy.',
+                chapters: [
+                    {
+                        num: 89,
+                        title: 'Have you appointed a Data Protection Officer?',
+                        hasVideo: false,
+                        videoTitle: null,
+                        videoUrl: null,
+                        context: 'A company was audited by the Bavarian Data Protection Authority and found to have appointed its IT Manager as the Data Protection Officer. The regulator ruled this a severe conflict of interest, as the IT Manager would be overseeing their own technical implementations. The company refused to change the DPO and was subsequently fined.',
+                        learnings: 'Under laws like the GDPR and PDPA, appointing a DPO is often mandatory. The DPO role requires a delicate balance of skillsets: legal understanding, project management, and practical business process experience. It does not automatically have to be a lawyer, but it cannot be someone whose primary job conflicts with independent data auditing.',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm text-center">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-6">The Ideal DPO Skillset</h4>
+                                <div class="flex justify-center relative -space-x-6">
+                                    <div class="w-28 h-28 rounded-full bg-blue-500/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-10 hover:z-30 hover:scale-110 transition-all">Legal</div>
+                                    <div class="w-28 h-28 rounded-full bg-emerald-500/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-20 -translate-y-5 hover:z-30 hover:scale-110 transition-all">Operations</div>
+                                    <div class="w-28 h-28 rounded-full bg-brand-orange/90 mix-blend-multiply flex items-center justify-center text-white text-[11px] tracking-wide font-bold border-4 border-white shadow-sm z-10 hover:z-30 hover:scale-110 transition-all">Leadership</div>
+                                </div>
+                                <p class="text-sm text-slate-600 font-medium mt-6">A balanced convergence of skills, completely independent from IT execution.</p>
+                            </div>
+                        `,
+                        checklists: [
+                            'Ensure the appointed DPO does not have a conflict of interest (e.g., not the Head of IT).',
+                            'Provide the DPO with sufficient authority and resources to report directly to senior management.',
+                            'Ensure the DPO has practical operational experience, not just legal knowledge.'
+                        ]
+                    },
+                    {
+                        num: 95,
+                        title: 'Ransomware – pay up or else',
+                        hasVideo: true,
+                        videoTitle: 'Related video: Ransomware - Pay up or else...',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/wXys4vKq38s',
+                        context: 'The WannaCry ransomware attack infected over 300,000 computers globally, encrypting data and demanding Bitcoin. In the UK, 16 health service organizations were crippled, forcing hospitals to cancel surgical operations and revert to pen and paper because staff were locked out of critical medical databases.',
+                        learnings: 'Ransomware plays on human psychology and software vulnerabilities. DPOs must work with IT to ensure data availability (a key tenet of data protection). Paying the ransom guarantees nothing. The best defense is rigorous, air-gapped backups and strict protocols against clicking phishing links.',
+                        infographic: `
+                            <div class="bg-white border border-slate-200 rounded-xl p-8 mb-8 shadow-sm">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col items-center flex-1 group">
+                                        <div class="w-14 h-14 rounded-xl bg-rose-50 flex items-center justify-center mb-3 shadow-xs border border-rose-100 group-hover:scale-105 transition-transform"><i data-lucide="mail-warning" class="w-6 h-6 text-rose-500"></i></div>
+                                        <span class="text-[11px] font-bold text-slate-700 text-center uppercase tracking-wide">Phishing<br>Entry</span>
+                                    </div>
+                                    <div class="w-10 h-0.5 bg-slate-200 mx-2"></div>
+                                    <div class="flex flex-col items-center flex-1 group">
+                                        <div class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-3 shadow-xs border border-slate-200 group-hover:scale-105 transition-transform"><i data-lucide="lock" class="w-6 h-6 text-slate-700"></i></div>
+                                        <span class="text-[11px] font-bold text-slate-700 text-center uppercase tracking-wide">Data<br>Encrypted</span>
+                                    </div>
+                                    <div class="w-10 h-0.5 bg-slate-200 mx-2"></div>
+                                    <div class="flex flex-col items-center flex-1 border-2 border-dashed border-emerald-300 rounded-xl p-3 bg-emerald-50 relative group">
+                                        <div class="absolute -top-2 -right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center border-2 border-white"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+                                        <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform"><i data-lucide="server" class="w-5 h-5 text-emerald-600"></i></div>
+                                        <span class="text-[11px] font-bold text-emerald-800 text-center uppercase tracking-wide">Air-Gapped<br>Backup</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `,
+                        checklists: [
+                            'Implement a strict schedule for backing up data on secondary storage disconnected from the main network.',
+                            'Ensure IT applies security patches to operating systems immediately.',
+                            'Train staff extensively on identifying phishing emails (the primary vector for ransomware).'
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // State Management
+        let currentSectionId = 'about-book'; // Default View
+
+        // Elements
+        const sidebarNav = document.getElementById('sidebar-nav');
+        const navAboutBook = document.getElementById('nav-about-book');
+        const contentHeader = document.getElementById('content-header');
+        const contentContainer = document.getElementById('content-container');
+        const searchInput = document.getElementById('searchInput');
+
+        // Render Sidebar
+        function renderSidebar() {
+            sidebarNav.innerHTML = '';
+            
+            // Safely update the static "About Book" button
+            if (navAboutBook) {
+                const icon = document.getElementById('about-book-icon');
+                if (currentSectionId === 'about-book') {
+                    navAboutBook.classList.add('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
+                    navAboutBook.classList.remove('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
+                    if (icon) {
+                        icon.classList.replace('opacity-0', 'opacity-100');
+                        icon.classList.replace('-translate-x-2', 'translate-x-1');
+                        icon.classList.add('text-brand-orange');
+                    }
+                } else {
+                    navAboutBook.classList.remove('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
+                    navAboutBook.classList.add('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
+                    if (icon) {
+                        icon.classList.replace('opacity-100', 'opacity-0');
+                        icon.classList.replace('translate-x-1', '-translate-x-2');
+                        icon.classList.remove('text-brand-orange');
+                    }
+                }
+            }
+
+            bookData.forEach(section => {
+                const isActive = section.id === currentSectionId;
+                const btn = document.createElement('button');
+                
+                btn.className = `nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1.5 flex items-center justify-between outline-none border-l-4 border-transparent
+                    ${isActive 
+                        ? 'active shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] border border-orange-100/50' 
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold'}`;
+                
+                btn.innerHTML = `
+                    <span class="truncate pr-2">${section.shortTitle}</span>
+                    <i data-lucide="chevron-right" class="transition-transform ${isActive ? 'text-brand-orange translate-x-1 opacity-100' : 'text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'} w-4 h-4 flex-shrink-0"></i>
+                `;
+                btn.onclick = () => selectSection(section.id);
+                sidebarNav.appendChild(btn);
+            });
+            lucide.createIcons();
+        }
+
+        // Select a Section
+        function selectSection(id) {
+            currentSectionId = id;
+            renderSidebar();
+            
+            if (id === 'about-book') {
+                renderAboutBook();
+            } else {
+                const section = bookData.find(s => s.id === id);
+                
+                // Update Header
+                contentHeader.style.display = 'block';
+                document.getElementById('current-section-badge').textContent = section.shortTitle;
+                document.getElementById('current-section-title').textContent = section.fullTitle;
+                document.getElementById('current-section-desc').textContent = section.description;
+
+                // Render Chapters
+                renderChapters(section.chapters);
+            }
+            
+            // Scroll to top of main content smoothly
+            document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render About the Book View
+        function renderAboutBook() {
+            contentHeader.style.display = 'none'; // Hide default header for this view
+            
+            let reviewsHtml = aboutBookData.reviews.map((review, idx) => `
+                <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all h-full flex flex-col justify-between" style="animation-delay: ${(idx * 0.1) + 0.3}s">
+                    <div>
+                        <i data-lucide="quote" class="w-8 h-8 text-brand-orange/20 mb-5 fill-brand-orange/10"></i>
+                        <p class="text-sm text-slate-700 font-medium leading-relaxed italic mb-8">"${review.quote}"</p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-5">
+                        <p class="font-bold text-slate-900 text-sm">${review.author}</p>
+                        <p class="text-xs text-slate-500 font-medium mt-1">${review.title}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Added Lead Capture HTML at the bottom of the About section
+            const leadCaptureHtml = `
+                <div class="mt-16 bg-gradient-to-br from-[#1E2328] to-[#121518] rounded-3xl p-10 shadow-xl border border-slate-700 animate-fade-in-up text-center relative overflow-hidden" style="animation-delay: 0.6s">
+                    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 h-72 bg-brand-orange rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+                    
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/5 rounded-2xl border border-white/10 mb-6 backdrop-blur-sm">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
+                    <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');">
+                        <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
+                        <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                            I'd like to learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            `;
+
+            contentContainer.innerHTML = `
+                <div class="animate-fade-in-up">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-orange-100/50 text-brand-orange border border-orange-200 uppercase tracking-widest mb-6">
+                        Overview
+                    </span>
+                    
+                    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16">
+                        <!-- Book Cover image -->
+                        <div class="w-full lg:w-1/3 flex-shrink-0">
+                            <div class="relative bg-white p-2 rounded-xl border border-slate-100 book-shadow">
+                                <img src="${aboutBookData.coverImage}" alt="Book Cover" class="w-full h-auto rounded-lg object-cover" onerror="this.src='https://via.placeholder.com/400x600.png?text=Book+Cover+Unavailable'">
+                            </div>
+                            <div class="mt-8 text-center">
+                                <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="inline-flex items-center justify-center w-full gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-brand-orange text-white hover:bg-[#d15817] transition-all shadow-md hover:shadow-lg">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4"></i> Get it on Amazon
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="w-full lg:w-2/3">
+                            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
+                                ${aboutBookData.fullTitle}
+                            </h1>
+                            <h2 class="text-xl text-brand-orange font-semibold mb-8 pb-8 border-b border-slate-200/80">
+                                ${aboutBookData.description}
+                            </h2>
+                            <div class="prose prose-slate prose-p:leading-relaxed prose-p:text-slate-700 prose-p:font-medium prose-p:mb-6 max-w-none">
+                                <p>${aboutBookData.summary}</p>
+                            </div>
+                            
+                            <div class="mt-10 grid grid-cols-2 gap-5">
+                                <div class="bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                                    <div class="text-4xl font-black text-slate-900 mb-2">99</div>
+                                    <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Chapters</div>
+                                </div>
+                                <div class="bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                                    <div class="text-4xl font-black text-slate-900 mb-2">8</div>
+                                    <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Core Modules</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials/Reviews -->
+                    <div class="pt-12 border-t border-slate-200/80">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-8">What Industry Leaders Say</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            ${reviewsHtml}
+                        </div>
+                    </div>
+                    
+                    ${leadCaptureHtml}
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        // Render Chapters with Staggered Animation
+        function renderChapters(chapters) {
+            contentContainer.innerHTML = '';
+            
+            if (chapters.length === 0) {
+                contentContainer.innerHTML = `
+                    <div class="text-center py-16 bg-white rounded-2xl border border-dashed border-slate-300 animate-fade-in-up">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-100">
+                            <i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">No chapters found</h3>
+                        <p class="text-sm font-medium text-slate-500">Try adjusting your search terms.</p>
+                    </div>`;
+                lucide.createIcons();
+                return;
+            }
+
+            chapters.forEach((chapter, index) => {
+                const hasVideo = chapter.hasVideo && chapter.videoUrl !== null;
+                const videoBadge = hasVideo ? `<span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-bold bg-brand-orange/10 text-brand-orange border border-brand-orange/20 tracking-wide uppercase"><i data-lucide="play" class="w-3 h-3 mr-1 fill-current"></i> Video Lesson</span>` : '';
+                
+                const checklistHtml = chapter.checklists.map(item => 
+                    `<li class="flex items-start gap-3 text-sm text-slate-700 font-medium">
+                        <div class="mt-0.5 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                            <i data-lucide="check" class="w-3 h-3 text-emerald-600 stroke-[3]"></i>
+                        </div>
+                        <span class="leading-relaxed">${item}</span>
+                    </li>`
+                ).join('');
+
+                const videoHtml = hasVideo ? `
+                    <div class="mt-10 pt-8 border-t border-slate-100">
+                        <h4 class="text-sm font-extrabold text-slate-900 mb-5 flex items-center gap-2 uppercase tracking-wider">
+                            <div class="p-1.5 bg-brand-orange/10 rounded-lg"><i data-lucide="monitor-play" class="w-4 h-4 text-brand-orange"></i></div>
+                            ${chapter.videoTitle || 'Interactive Training'}
+                        </h4>
+                        <div class="video-wrapper rounded-xl">
+                            <iframe src="${chapter.videoUrl}" allow="autoplay" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                ` : '';
+
+                const infographicHtml = chapter.infographic ? chapter.infographic : '';
+
+                const cardHtml = `
+                    <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s">
+                        <button class="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none" onclick="toggleChapter(${chapter.num})">
+                            <div class="pr-6">
+                                <div class="flex items-center mb-2.5">
+                                    <span class="text-xs font-extrabold text-slate-400 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                    ${videoBadge}
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-orange transition-colors">${chapter.title}</h3>
+                            </div>
+                            <div class="flex-shrink-0 w-10 h-10 bg-slate-50 flex items-center justify-center rounded-xl border border-slate-100 group-hover:bg-orange-50 group-hover:border-orange-200 transition-colors shadow-xs">
+                                <i data-lucide="chevron-down" id="icon-chapter-${chapter.num}" class="w-5 h-5 text-slate-500 group-hover:text-brand-orange chevron-icon"></i>
+                            </div>
+                        </button>
+                        
+                        <div id="content-chapter-${chapter.num}" class="chapter-content bg-slate-50/30">
+                            <div class="chapter-inner px-8 pb-8 pt-2">
+                                
+                                <div class="grid lg:grid-cols-2 gap-6 mb-8">
+                                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs relative overflow-hidden">
+                                        <div class="absolute top-0 left-0 w-1.5 h-full bg-slate-300"></div>
+                                        <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                            <i data-lucide="book-open" class="w-4 h-4 text-slate-400"></i> The Context
+                                        </h4>
+                                        <p class="text-sm text-slate-700 font-medium leading-relaxed">${chapter.context}</p>
+                                    </div>
+
+                                    <div class="bg-orange-50/50 p-6 rounded-xl border border-orange-100 shadow-xs relative overflow-hidden">
+                                        <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-orange"></div>
+                                        <h4 class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-3 flex items-center gap-2">
+                                            <i data-lucide="lightbulb" class="w-4 h-4 fill-brand-orange/20"></i> DPO Learnings
+                                        </h4>
+                                        <p class="text-sm text-slate-800 leading-relaxed font-semibold">${chapter.learnings}</p>
+                                    </div>
+                                </div>
+                                
+                                ${infographicHtml}
+                                
+                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-widest mb-5 flex items-center gap-2">
+                                        <div class="p-1 bg-emerald-50 rounded"><i data-lucide="list-checks" class="w-4 h-4 text-emerald-500"></i></div>
+                                        Actionable Checklist
+                                    </h4>
+                                    <ul class="space-y-3">
+                                        ${checklistHtml}
+                                    </ul>
+                                </div>
+
+                                ${videoHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contentContainer.innerHTML += cardHtml;
+            });
+
+            // ADD LEAD CAPTURE SECTION AT THE BOTTOM OF THE LIST
+            const leadCaptureHtml = `
+                <div class="mt-16 bg-gradient-to-br from-[#1E2328] to-[#121518] rounded-3xl p-10 shadow-xl border border-slate-700 animate-fade-in-up text-center relative overflow-hidden" style="animation-delay: 0.6s">
+                    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 h-72 bg-brand-orange rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+                    
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/5 rounded-2xl border border-white/10 mb-6 backdrop-blur-sm">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
+                    <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="event.preventDefault(); alert('Thanks for your interest! We will be in touch soon.');">
+                        <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
+                        <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                            I'd like to learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            `;
+            contentContainer.innerHTML += leadCaptureHtml;
+
+            lucide.createIcons();
+        }
+
+        // Toggle Chapter Accordion
+        function toggleChapter(num) {
+            const content = document.getElementById(`content-chapter-${num}`);
+            const isExpanded = content.classList.contains('expanded');
+            
+            // Auto-close others for a cleaner UX
+            document.querySelectorAll('.chapter-content').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            if (!isExpanded) {
+                content.classList.add('expanded');
+            }
+        }
+
+        // Global Search Functionality
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            
+            if (term === '') {
+                if(currentSectionId) selectSection(currentSectionId);
+                return;
+            }
+
+            // If searching while on About page, switch header context back
+            document.getElementById('content-header').style.display = 'block';
+
+            // Flatten all chapters to search through everything
+            let results = [];
+            bookData.forEach(section => {
+                section.chapters.forEach(chap => {
+                    if (
+                        chap.title.toLowerCase().includes(term) || 
+                        chap.context.toLowerCase().includes(term) || 
+                        chap.learnings.toLowerCase().includes(term)
+                    ) {
+                        results.push({...chap, sectionName: section.shortTitle});
+                    }
+                });
+            });
+
+            // Update UI for Search Results
+            document.getElementById('current-section-badge').textContent = 'Global Search';
+            document.getElementById('current-section-title').textContent = `Found ${results.length} cases`;
+            document.getElementById('current-section-desc').textContent = `Displaying search results for "${term}" across all training modules.`;
+            
+            // Remove active state from sidebar
+            currentSectionId = null;
+            renderSidebar();
+
+            renderChapters(results);
+            
+            // Auto-expand all search results for easier scanning
+            results.forEach(r => {
+                const el = document.getElementById(`content-chapter-${r.num}`);
+                if(el) el.classList.add('expanded');
+            });
+        });
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            // Default to 'About Book' section on load
+            selectSection('about-book');
+        });
+
+    </script>
+</body>
+</html>
