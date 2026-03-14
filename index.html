@@ -246,6 +246,20 @@
           <li><code>README.md</code>: project-level notes and mapping rationale.</li>
         </ul>
 
+        <h3>Soft gate — how chapter access works</h3>
+        <p>
+          The page uses a <strong>soft gate</strong>: a small number of chapters are visible to everyone for free,
+          and the rest are locked behind a lead-capture form. Visitors can sample the content before deciding to share
+          their email — this significantly increases form conversion compared to a hard paywall.
+        </p>
+        <ul>
+          <li>Free chapter count is set by <code>FREE_CHAPTERS</code> in <code>app.html</code> (currently <code>1</code>).</li>
+          <li>Submitting the form calls <code>localStorage.setItem('99b_unlocked', '1')</code>, which unlocks all chapters immediately — no reload required.</li>
+          <li>The unlock persists on that device indefinitely (until the visitor clears browser storage).</li>
+          <li>The gate renders inline inside the chapter scroll at the <code>FREE_CHAPTERS</code> boundary — it feels like a natural next step, not an interruption.</li>
+          <li><strong>Any mechanism that sets <code>localStorage '99b_unlocked' = '1'</code>, or redirects back to the page with <code>?unlocked=1</code>, will unlock chapters.</strong> This makes it easy to swap in any third-party form tool. See the Deploy tab for the Growthworks-specific setup.</li>
+        </ul>
+
         <p class="note">
           Video embeds in the app now use <code>youtube-nocookie.com</code> links for cleaner embed behavior on GitHub Pages.
         </p>
@@ -289,6 +303,31 @@ https://www.yourcompany.com/privacy/99-breaches/</div>
           <li>Do not use the tab-shell <code>index.html</code> unless you explicitly want docs/deploy tabs visible.</li>
           <li>Add GrowthWorks form/embed script to replace placeholder lead capture handlers in <code>app.html</code>.</li>
         </ul>
+
+        <h3>Unlocking chapters after Growthworks lead capture</h3>
+        <p>
+          When a visitor submits your Growthworks form, you need to redirect them back to the preview page
+          with <code>?unlocked=1</code> so the chapters unlock automatically. Here's how:
+        </p>
+        <ol style="padding-left:18px; color:#27313d; line-height:1.6; margin-bottom:12px;">
+          <li>In Growthworks, open your form's <strong>Success / Thank You</strong> settings.</li>
+          <li>Set the redirect URL to:<br>
+            <code style="display:block; margin-top:6px; padding:8px 12px; background:#0f172a; color:#e2e8f0; border-radius:8px; font-size:0.85rem;">
+              https://altoh5.github.io/99-Breaches-Preview/?unlocked=1
+            </code>
+          </li>
+          <li>
+            The page will automatically detect the parameter on load, set <code>localStorage</code> to unlock all chapters,
+            then strip <code>?unlocked=1</code> from the URL — so sharing the link with others won't auto-unlock them.
+          </li>
+          <li>
+            Optionally, replace or hide the inline gate form in <code>app.html</code>: find the <code>handleGateSubmit</code>
+            function and swap the <code>&lt;form&gt;</code> block with a button linking to your Growthworks form URL.
+          </li>
+        </ol>
+        <div class="note">
+          <strong>Test end-to-end:</strong> Submit a test lead in Growthworks and confirm you are redirected to the preview page with all chapters unlocked. Then clear <code>localStorage</code> (DevTools → Application → Local Storage → delete <code>99b_unlocked</code>) and repeat to verify the gate reappears for new visitors.
+        </div>
 
         <h3>Unlocking chapters after GrowthWorks lead capture</h3>
         <p>
