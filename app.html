@@ -149,6 +149,49 @@
     </style>
 </head>
 <body class="font-sans text-slate-900 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden bg-brand-light">
+    <!-- Mobile sidebar backdrop -->
+    <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/40 z-40 hidden md:hidden" onclick="closeMobileSidebar()"></div>
+
+    <!-- Mobile Sidebar -->
+    <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-[84vw] max-w-80 bg-white border-r border-brand-border z-50 shadow-xl flex flex-col transform -translate-x-full transition-transform duration-300 md:hidden">
+        <div class="h-16 flex items-center justify-between px-4 border-b border-brand-border">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="selectSection('about-book'); closeMobileSidebar();">
+                <div class="w-7 h-9 flex-shrink-0 shadow-sm border border-slate-200 rounded overflow-hidden">
+                    <img src="https://images-na.ssl-images-amazon.com/images/P/9814794643.01._SCLZZZZZZZ_.jpg" alt="Book Cover Icon" class="w-full h-full object-cover block">
+                </div>
+                <span class="font-bold text-base tracking-tight text-slate-900">99 Privacy <span class="text-brand-orange">Breaches</span></span>
+            </div>
+            <button class="p-2 text-slate-500" aria-label="Close menu" onclick="closeMobileSidebar()">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto custom-scrollbar">
+            <div class="p-4 pb-2">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-3">Overview</p>
+            </div>
+
+            <div class="px-3 mb-4">
+                <button id="mobile-nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold transition-all" onclick="selectSection('about-book'); closeMobileSidebar();">
+                    <span class="flex items-center gap-3"><i data-lucide="book" class="w-4 h-4"></i> About the Book</span>
+                    <i id="mobile-about-book-icon" data-lucide="chevron-right" class="transition-transform opacity-0 -translate-x-2 w-4 h-4 flex-shrink-0"></i>
+                </button>
+            </div>
+
+            <div class="px-4 pb-2 border-t border-brand-border pt-5">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-3">Areas to beware of</p>
+            </div>
+
+            <nav class="px-3 space-y-1 pb-6" id="mobile-sidebar-nav"></nav>
+        </div>
+
+        <div class="p-4 border-t border-brand-border bg-slate-50/80">
+            <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-bold bg-white border border-slate-200 text-slate-800 hover:border-brand-orange hover:text-brand-orange hover:shadow-sm transition-all">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                Purchase the Book
+            </a>
+        </div>
+    </aside>
 
     <!-- Left Sidebar (Fixed, 100vh) -->
     <aside class="w-80 bg-white border-r border-brand-border flex-shrink-0 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.02)] hidden md:flex">
@@ -196,8 +239,11 @@
     <div class="flex-1 flex flex-col relative min-w-0">
         
         <!-- Top Navigation (Absolute & Sticky over scrolling content) -->
-        <header class="absolute top-0 left-0 w-full z-50 glass-header border-b border-slate-200/80 h-16 flex items-center px-6 md:px-10 justify-between">
+        <header class="absolute top-0 left-0 w-full z-50 glass-header border-b border-slate-200/80 h-16 flex items-center px-4 md:px-10 justify-between">
             <div class="flex items-center gap-4">
+                <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 bg-white text-slate-700" aria-label="Open menu" onclick="openMobileSidebar()">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
                 <a href="https://dpexnetwork.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white text-slate-700 border border-slate-200 tracking-wider uppercase hover:text-brand-orange hover:border-orange-200 hover:shadow-sm transition-all">
                     <span class="w-2 h-2 rounded-full bg-brand-orange mr-2"></span>
                     Data Protection Excellence Network Resource
@@ -211,7 +257,7 @@
                     <input type="text" id="searchInput" placeholder="Search cases, learnings, keywords..." class="bg-transparent border-none outline-none text-sm w-full text-slate-800 font-medium placeholder-slate-400 ml-3">
                 </div>
                 
-                <div class="flex items-center gap-4 border-l border-slate-200 pl-6">
+                <div class="hidden md:flex items-center gap-4 border-l border-slate-200 pl-6">
                     <button class="text-slate-400 hover:text-brand-orange transition-colors">
                         <i data-lucide="bell" class="w-5 h-5"></i>
                     </button>
@@ -729,52 +775,74 @@
 
         // Elements
         const sidebarNav = document.getElementById('sidebar-nav');
+        const mobileSidebarNav = document.getElementById('mobile-sidebar-nav');
         const navAboutBook = document.getElementById('nav-about-book');
+        const mobileNavAboutBook = document.getElementById('mobile-nav-about-book');
         const contentHeader = document.getElementById('content-header');
         const contentContainer = document.getElementById('content-container');
         const searchInput = document.getElementById('searchInput');
+
+        function openMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.remove('-translate-x-full');
+            document.getElementById('mobile-sidebar-backdrop').classList.remove('hidden');
+        }
+
+        function closeMobileSidebar() {
+            document.getElementById('mobile-sidebar').classList.add('-translate-x-full');
+            document.getElementById('mobile-sidebar-backdrop').classList.add('hidden');
+        }
 
         // Render Sidebar
         function renderSidebar() {
             sidebarNav.innerHTML = '';
             
-            // Safely update the static "About Book" button
-            if (navAboutBook) {
-                const icon = document.getElementById('about-book-icon');
+            // Update "About Book" buttons on desktop + mobile
+            [
+                { button: navAboutBook, iconId: 'about-book-icon' },
+                { button: mobileNavAboutBook, iconId: 'mobile-about-book-icon' }
+            ].forEach(({ button, iconId }) => {
+                if (!button) return;
+                const icon = document.getElementById(iconId);
                 if (currentSectionId === 'about-book') {
-                    navAboutBook.classList.add('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
-                    navAboutBook.classList.remove('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
+                    button.classList.add('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
+                    button.classList.remove('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
                     if (icon) {
                         icon.classList.replace('opacity-0', 'opacity-100');
                         icon.classList.replace('-translate-x-2', 'translate-x-1');
                         icon.classList.add('text-brand-orange');
                     }
                 } else {
-                    navAboutBook.classList.remove('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
-                    navAboutBook.classList.add('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
+                    button.classList.remove('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]', 'border', 'border-orange-100/50');
+                    button.classList.add('text-slate-600', 'hover:bg-slate-100', 'hover:text-slate-900', 'border-transparent');
                     if (icon) {
                         icon.classList.replace('opacity-100', 'opacity-0');
                         icon.classList.replace('translate-x-1', '-translate-x-2');
                         icon.classList.remove('text-brand-orange');
                     }
                 }
-            }
+            });
 
             bookData.forEach(section => {
                 const isActive = section.id === currentSectionId;
-                const btn = document.createElement('button');
-                
-                btn.className = `nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1.5 flex items-center justify-between outline-none border-l-4 border-transparent
-                    ${isActive 
-                        ? 'active shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] border border-orange-100/50' 
+                const className = `nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1.5 flex items-center justify-between outline-none border-l-4 border-transparent
+                    ${isActive
+                        ? 'active shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] border border-orange-100/50'
                         : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold'}`;
-                
-                btn.innerHTML = `
+                const itemHtml = `
                     <span class="truncate pr-2">${section.shortTitle}</span>
                     <i data-lucide="chevron-right" class="transition-transform ${isActive ? 'text-brand-orange translate-x-1 opacity-100' : 'text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'} w-4 h-4 flex-shrink-0"></i>
                 `;
-                btn.onclick = () => selectSection(section.id);
-                sidebarNav.appendChild(btn);
+                [sidebarNav, mobileSidebarNav].forEach((targetNav) => {
+                    if (!targetNav) return;
+                    const btn = document.createElement('button');
+                    btn.className = className;
+                    btn.innerHTML = itemHtml;
+                    btn.onclick = () => {
+                        selectSection(section.id);
+                        closeMobileSidebar();
+                    };
+                    targetNav.appendChild(btn);
+                });
             });
             lucide.createIcons();
         }
@@ -783,6 +851,7 @@
         function selectSection(id) {
             currentSectionId = id;
             renderSidebar();
+            closeMobileSidebar();
             
             if (id === 'about-book') {
                 renderAboutBook();
