@@ -248,18 +248,32 @@
       <div class="panel-body">
         <h2>Deploy & Edit Guide</h2>
 
-        <h3>Deploy to GitHub Pages</h3>
+        <h3>Deploy as Corporate Micro Landing Page</h3>
         <ul>
-          <li>Repository: <code>Altoh5/99-Breaches-Preview</code></li>
-          <li>Branch: <code>main</code></li>
-          <li>Folder: <code>/(root)</code></li>
-          <li>Landing page: <code>index.html</code> (this tab shell)</li>
-          <li>Main app page: <code>app.html</code></li>
+          <li>Source repo: <code>Altoh5/99-Breaches-Preview</code></li>
+          <li>Use <code>index.html</code> as the shell page and <code>app.html</code> as the interactive content.</li>
+          <li>Deploy both files into your corporate web server path for this campaign, e.g. <code>/privacy/99-breaches/</code>.</li>
+          <li>Keep relative paths intact so <code>index.html</code> can load <code>./app.html</code>.</li>
+          <li>If your CMS requires a single page, merge the tab shell and app into one file before publish.</li>
         </ul>
 
-        <div class="code">git add index.html app.html README.md
-git commit -m "Update tabs/content/videos"
-git push origin main</div>
+        <div class="code"># 1) Pull latest repo version
+git clone https://github.com/Altoh5/99-Breaches-Preview.git
+
+# 2) Deliver these files to your corporate web team / CMS upload
+index.html
+app.html
+
+# 3) Publish to target URL (example)
+https://www.yourcompany.com/privacy/99-breaches/</div>
+
+        <h3>Corporate deployment checklist</h3>
+        <ul>
+          <li>Confirm external CDNs are allowed: Tailwind CDN, Lucide CDN, Google Fonts, YouTube embeds.</li>
+          <li>If CSP blocks inline scripts/styles, move them to approved static JS/CSS files.</li>
+          <li>Set campaign metadata in page title, OG tags, and analytics tracking IDs.</li>
+          <li>Run mobile QA after publish (menu, tabs, videos, lead form).</li>
+        </ul>
 
         <h3>How to update chapter content</h3>
         <p>Open <code>app.html</code> and edit the <code>bookData</code> object.</p>
@@ -285,8 +299,9 @@ git push origin main</div>
         </p>
         <ul>
           <li>Update headline, body copy, and button label in the HTML template string.</li>
-          <li>Replace <code>onsubmit="event.preventDefault(); ..."</code> with your real endpoint integration.</li>
+          <li>Replace <code>onsubmit="event.preventDefault(); ..."</code> with your corporate form handler or embed script.</li>
           <li>Typical options: webhook, CRM form POST, API route, or marketing automation form embed.</li>
+          <li>Ensure consent text and privacy notice link match your corporate policy.</li>
         </ul>
 
         <h3>How to update video links safely</h3>
