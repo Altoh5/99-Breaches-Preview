@@ -190,12 +190,20 @@
         </button>
     </div>
     <script>
-        // Offset body to account for fixed banner
+        // Offset layout to account for fixed banner
         document.addEventListener('DOMContentLoaded', () => {
             const banner = document.getElementById('webinar-banner');
             if (banner) {
                 const h = banner.offsetHeight;
-                document.querySelector('.main-content-area, main, #main-content')?.style.setProperty('padding-top', h + 'px');
+                // Push header down so it doesn't overlap with banner
+                const header = document.querySelector('header');
+                if (header) header.style.top = h + 'px';
+                // Push main content down by banner + header height
+                const main = document.querySelector('#main-content');
+                if (main) main.style.paddingTop = (h + 64) + 'px';
+                // Push desktop sidebar down
+                const sidebar = document.querySelector('aside.hidden.md\\:flex');
+                if (sidebar) sidebar.style.marginTop = h + 'px';
             }
 
             // URL-parameter unlock — for third-party form integrations (e.g. Growthworks)
