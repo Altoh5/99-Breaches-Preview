@@ -248,16 +248,17 @@
 
         <h3>Soft gate — how chapter access works</h3>
         <p>
-          The page uses a <strong>soft gate</strong>: a small number of chapters are visible to everyone for free,
-          and the rest are locked behind a lead-capture form. Visitors can sample the content before deciding to share
-          their email — this significantly increases form conversion compared to a hard paywall.
+          A <strong>soft gate</strong> means visitors can read a free sample before they're asked for their email.
+          The first chapter is unlocked for everyone. After that, a sign-up form appears inline — right in the flow of reading, not as a pop-up or a wall before the page loads.
+        </p>
+        <p>
+          <strong>Why this converts better than a hard paywall:</strong> If you block the page entirely until someone signs up, most people leave without ever seeing the content.
+          A soft gate lets them get value first — they read one chapter, get curious, and <em>want</em> more. By the time they hit the form, they're already invested. This is the same approach used by top newsletter and content marketing pages.
         </p>
         <ul>
-          <li>Free chapter count is set by <code>FREE_CHAPTERS</code> in <code>app.html</code> (currently <code>1</code>).</li>
-          <li>Submitting the form calls <code>localStorage.setItem('99b_unlocked', '1')</code>, which unlocks all chapters immediately — no reload required.</li>
-          <li>The unlock persists on that device indefinitely (until the visitor clears browser storage).</li>
-          <li>The gate renders inline inside the chapter scroll at the <code>FREE_CHAPTERS</code> boundary — it feels like a natural next step, not an interruption.</li>
-          <li><strong>Any mechanism that sets <code>localStorage '99b_unlocked' = '1'</code>, or redirects back to the page with <code>?unlocked=1</code>, will unlock chapters.</strong> This makes it easy to swap in any third-party form tool. See the Deploy tab for the Growthworks-specific setup.</li>
+          <li>The number of free chapters is currently set to <strong>1</strong>. You can increase this in <code>app.html</code> by changing the <code>FREE_CHAPTERS</code> value.</li>
+          <li>Once someone submits the form, all chapters unlock instantly — no page reload needed. The unlock is remembered in their browser, so it stays unlocked on return visits.</li>
+          <li>Using a third-party form like Growthworks? See the Deploy tab — you just need to set a redirect URL after form submission. No other code changes required.</li>
         </ul>
 
         <p class="note">
