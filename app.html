@@ -1086,9 +1086,14 @@
         }
 
         // Render Chapters with Staggered Animation
+        const FREE_CHAPTERS = 3;
+        function isUnlocked() {
+            return localStorage.getItem('99b_unlocked') === '1';
+        }
+
         function renderChapters(chapters) {
             contentContainer.innerHTML = '';
-            
+
             if (chapters.length === 0) {
                 contentContainer.innerHTML = `
                     <div class="text-center py-16 bg-white rounded-2xl border border-dashed border-slate-300 animate-fade-in-up">
@@ -1103,10 +1108,47 @@
             }
 
             chapters.forEach((chapter, index) => {
+                // Gate chapters beyond FREE_CHAPTERS if not unlocked
+                if (index >= FREE_CHAPTERS && !isUnlocked()) {
+                    const gateHtml = `
+                        <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden" style="animation-delay: ${index * 0.08}s">
+                            <div class="px-8 py-6 flex items-center justify-between">
+                                <div class="pr-6">
+                                    <div class="flex items-center mb-2.5">
+                                        <span class="text-xs font-extrabold text-slate-400 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-400">${chapter.title}</h3>
+                                </div>
+                                <div class="flex-shrink-0 w-10 h-10 bg-slate-50 flex items-center justify-center rounded-xl border border-slate-100">
+                                    <i data-lucide="lock" class="w-5 h-5 text-slate-300"></i>
+                                </div>
+                            </div>
+                            <div class="px-8 pb-6 border-t border-slate-100">
+                                <div class="relative overflow-hidden rounded-xl mt-4">
+                                    <div class="blur-sm select-none pointer-events-none p-4 bg-slate-50 text-sm text-slate-500 leading-relaxed">
+                                        Unlock this chapter to read the full case study, DPO learnings, infographic, and action checklist. Enter your email below to get access to all ${chapters.length > FREE_CHAPTERS ? 'remaining' : ''} chapters.
+                                    </div>
+                                    <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
+                                </div>
+                                ${index === FREE_CHAPTERS ? `
+                                <div class="mt-5 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-xl p-5">
+                                    <p class="text-sm font-bold text-slate-800 mb-3">🔓 Unlock all ${chapters.length} chapters — free</p>
+                                    <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleGateSubmit(event, this)">
+                                        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-2.5 rounded-lg border border-orange-200 bg-white text-sm font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange">
+                                        <button type="submit" class="px-5 py-2.5 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-orange-600 transition-colors whitespace-nowrap">Get Access →</button>
+                                    </form>
+                                </div>` : '<p class="text-xs text-slate-400 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
+                            </div>
+                        </div>`;
+                    contentContainer.innerHTML += gateHtml;
+                    lucide.createIcons();
+                    return;
+                }
+
                 const hasVideo = chapter.hasVideo && chapter.videoUrl !== null;
                 const videoBadge = hasVideo ? `<span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-bold bg-brand-orange/10 text-brand-orange border border-brand-orange/20 tracking-wide uppercase"><i data-lucide="play" class="w-3 h-3 mr-1 fill-current"></i> Video Lesson</span>` : '';
-                
-                const checklistHtml = chapter.checklists.map(item => 
+
+                const checklistHtml = chapter.checklists.map(item =>
                     `<li class="flex items-start gap-3 text-sm text-slate-700 font-medium">
                         <div class="mt-0.5 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
                             <i data-lucide="check" class="w-3 h-3 text-emerald-600 stroke-[3]"></i>
@@ -1275,6 +1317,26 @@
             selectSection('about-book');
         });
 
+        // Gate form (inline between chapters) — same endpoint, then unlock
+        async function handleGateSubmit(e, form) {
+            e.preventDefault();
+            const email = form.querySelector('input[type="email"]').value;
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = 'Unlocking...';
+            btn.disabled = true;
+            try {
+                await fetch('https://script.google.com/a/macros/straitsinteractive.com/s/AKfycbxmDLfizOXtagLctf6-9xkqWAUlzH6xn8jJQsSJhZAiuOCDXor-NLzjE67pLkyfN7o8/exec', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: '99-breaches-gate' })
+                });
+            } catch(err) {}
+            localStorage.setItem('99b_unlocked', '1');
+            // Re-render current section
+            const activeBtn = document.querySelector('.nav-item-active');
+            if (activeBtn) activeBtn.click();
+        }
+
         // Lead Capture — posts to Google Sheets via Apps Script web app
         async function handleLeadSubmit(e, form) {
             e.preventDefault();
@@ -1290,7 +1352,8 @@
                     body: JSON.stringify({ email, source: '99-breaches-preview' })
                 });
                 if (res.ok) {
-                    form.innerHTML = '<div class="flex items-center justify-center gap-2 text-emerald-400 font-bold py-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> You\'re in! We\'ll be in touch soon.</div>';
+                    localStorage.setItem('99b_unlocked', '1');
+                    form.innerHTML = '<div class="flex items-center justify-center gap-2 text-emerald-400 font-bold py-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> You\'re in! All chapters unlocked.</div>';
                 } else {
                     throw new Error('Server error');
                 }
