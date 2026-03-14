@@ -20,7 +20,7 @@
     <!-- Google Fonts: Fraunces (display) + Plus Jakarta Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,6 +36,7 @@
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         display: ['Fraunces', 'serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'],
                     },
                     colors: {
                         brand: {
@@ -70,6 +71,40 @@
         body {
             background-color: #0f1117;
             color: #e2e8f0;
+            /* Subtle dot grid — adds depth without clutter */
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Orange atmosphere glow in main content */
+        #main-content::before {
+            content: '';
+            position: fixed;
+            top: 0; right: 0;
+            width: 600px; height: 600px;
+            background: radial-gradient(ellipse at top right, rgba(232,99,26,0.06) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Chapter/case number labels — monospace for that classified-file feel */
+        .chapter-num-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+        }
+
+        /* Sidebar section labels — mono for precision */
+        .sidebar-section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+        }
+
+        /* Display font for section titles and major headings */
+        #current-section-title, .font-display {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
         }
 
         /* Dark theme overrides for chapter cards */
@@ -207,9 +242,9 @@
             box-shadow: 0 0 0 1px rgba(232,99,26,0.3), 0 8px 32px rgba(232,99,26,0.08) !important;
         }
 
-        /* Display font for major headings */
-        h1, .font-display {
-            font-family: 'Fraunces', serif;
+        /* Orange scrollbar — matches brand accent */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(232,99,26,0.5) !important;
         }
     </style>
 </head>
@@ -273,7 +308,7 @@
 
         <div class="flex-1 overflow-y-auto custom-scrollbar">
             <div class="p-4 pb-2">
-                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-3">Overview</p>
+                <p class="sidebar-section-label text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-3">Overview</p>
             </div>
 
             <div class="px-3 mb-4">
@@ -284,7 +319,7 @@
             </div>
 
             <div class="px-4 pb-2 border-t border-white/10 pt-5">
-                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-3">Areas to beware of</p>
+                <p class="sidebar-section-label text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-3">Areas to beware of</p>
             </div>
 
             <nav class="px-3 space-y-1 pb-6" id="mobile-sidebar-nav"></nav>
@@ -312,7 +347,7 @@
 
         <div class="flex-1 overflow-y-auto custom-scrollbar">
             <div class="p-6 pb-2">
-                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-4">Overview</p>
+                <p class="sidebar-section-label text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4">Overview</p>
             </div>
 
             <!-- About Book Link -->
@@ -324,7 +359,7 @@
             </div>
 
             <div class="px-6 pb-2 border-t border-white/10 pt-6">
-                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-4">Areas to beware of</p>
+                <p class="sidebar-section-label text-xs font-bold text-slate-400 uppercase tracking-[0.15em] mb-4">Areas to beware of</p>
             </div>
 
             <nav class="px-3 space-y-1 pb-6" id="sidebar-nav">
@@ -1191,9 +1226,9 @@
                             <div class="px-8 py-6 flex items-center justify-between">
                                 <div class="pr-6">
                                     <div class="flex items-center mb-2.5">
-                                        <span class="text-xs font-extrabold text-slate-500 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                        <span class="chapter-num-label font-medium text-brand-orange/60 tracking-[0.12em] uppercase">Case ${chapter.num}</span>
                                     </div>
-                                    <h3 class="text-xl font-bold text-slate-400">${chapter.title}</h3>
+                                    <h3 class="font-display text-xl font-bold text-slate-400">${chapter.title}</h3>
                                 </div>
                                 <div class="flex-shrink-0 w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl border border-white/10">
                                     <i data-lucide="lock" class="w-5 h-5 text-slate-500"></i>
@@ -1252,10 +1287,10 @@
                         <button class="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none" onclick="toggleChapter(${chapter.num})">
                             <div class="pr-6">
                                 <div class="flex items-center mb-2.5">
-                                    <span class="text-xs font-extrabold text-zinc-500 tracking-[0.15em] uppercase">Chapter ${chapter.num}</span>
+                                    <span class="chapter-num-label font-medium text-brand-orange/50 tracking-[0.12em] uppercase">Case ${chapter.num}</span>
                                     ${videoBadge}
                                 </div>
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">${chapter.title}</h3>
+                                <h3 class="font-display text-xl font-bold text-white group-hover:text-brand-orange transition-colors">${chapter.title}</h3>
                             </div>
                             <div class="flex-shrink-0 w-10 h-10 bg-zinc-800 flex items-center justify-center rounded-xl border border-zinc-700 group-hover:bg-orange-900/30 group-hover:border-orange-700 transition-colors shadow-xs">
                                 <i data-lucide="chevron-down" id="icon-chapter-${chapter.num}" class="w-5 h-5 text-zinc-400 group-hover:text-brand-orange chevron-icon"></i>
