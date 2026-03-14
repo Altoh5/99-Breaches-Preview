@@ -1275,7 +1275,7 @@
             selectSection('about-book');
         });
 
-        // Lead Capture — posts to Supabase page_leads table
+        // Lead Capture — posts to Google Sheets via Apps Script web app
         async function handleLeadSubmit(e, form) {
             e.preventDefault();
             const email = form.querySelector('input[type="email"]').value;
@@ -1284,17 +1284,12 @@
             btn.innerHTML = '<svg class="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending...';
             btn.disabled = true;
             try {
-                const res = await fetch('https://ikzomtgjcqbukcpitptu.supabase.co/rest/v1/page_leads', {
+                const res = await fetch('https://script.google.com/a/macros/straitsinteractive.com/s/AKfycbxmDLfizOXtagLctf6-9xkqWAUlzH6xn8jJQsSJhZAiuOCDXor-NLzjE67pLkyfN7o8/exec', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlrem9tdGdqY3FidWtjcGl0cHR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNDY5NTksImV4cCI6MjA4NjYyMjk1OX0.PF2ETKZdW1oLr13lfZdBQQQC1B-twyZCLlH2g5YNZ14',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlrem9tdGdqY3FidWtjcGl0cHR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNDY5NTksImV4cCI6MjA4NjYyMjk1OX0.PF2ETKZdW1oLr13lfZdBQQQC1B-twyZCLlH2g5YNZ14',
-                        'Prefer': 'return=minimal'
-                    },
-                    body: JSON.stringify({ email, page_source: '99-breaches-preview' })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: '99-breaches-preview' })
                 });
-                if (res.ok || res.status === 201) {
+                if (res.ok) {
                     form.innerHTML = '<div class="flex items-center justify-center gap-2 text-emerald-400 font-bold py-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> You\'re in! We\'ll be in touch soon.</div>';
                 } else {
                     throw new Error('Server error');
