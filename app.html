@@ -202,7 +202,7 @@
                 const main = document.querySelector('#main-content');
                 if (main) main.style.paddingTop = (h + 64) + 'px';
                 // Push desktop sidebar down
-                const sidebar = document.querySelector('aside.hidden.md\\:flex');
+                const sidebar = document.getElementById('desktop-sidebar');
                 if (sidebar) sidebar.style.marginTop = h + 'px';
             }
 
@@ -236,25 +236,25 @@
 
         <div class="flex-1 overflow-y-auto custom-scrollbar">
             <div class="p-4 pb-2">
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-3">Overview</p>
+                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-3">Overview</p>
             </div>
 
             <div class="px-3 mb-4">
-                <button id="mobile-nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-400 hover:bg-white/10 hover:text-white font-semibold transition-all" onclick="selectSection('about-book'); closeMobileSidebar();">
+                <button id="mobile-nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-200 hover:bg-white/10 hover:text-white font-semibold transition-all" onclick="selectSection('about-book'); closeMobileSidebar();">
                     <span class="flex items-center gap-3"><i data-lucide="book" class="w-4 h-4"></i> About the Book</span>
                     <i id="mobile-about-book-icon" data-lucide="chevron-right" class="transition-transform opacity-0 -translate-x-2 w-4 h-4 flex-shrink-0"></i>
                 </button>
             </div>
 
             <div class="px-4 pb-2 border-t border-white/10 pt-5">
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-3">Areas to beware of</p>
+                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-3">Areas to beware of</p>
             </div>
 
             <nav class="px-3 space-y-1 pb-6" id="mobile-sidebar-nav"></nav>
         </div>
 
-        <div class="p-4 border-t border-brand-border bg-slate-50/80">
-            <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-bold bg-white border border-slate-200 text-slate-800 hover:border-brand-orange hover:text-brand-orange hover:shadow-sm transition-all">
+        <div class="p-4 border-t border-white/10 bg-black/20">
+            <a href="https://www.amazon.sg/Privacy-Breaches-Beware-Protection-Experiences/dp/9814794643" target="_blank" class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-bold bg-white/10 border border-white/20 text-slate-200 hover:border-brand-orange hover:text-brand-orange hover:shadow-sm transition-all">
                 <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                 Purchase the Book
             </a>
@@ -275,19 +275,19 @@
 
         <div class="flex-1 overflow-y-auto custom-scrollbar">
             <div class="p-6 pb-2">
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-4">Overview</p>
+                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-4">Overview</p>
             </div>
 
             <!-- About Book Link -->
             <div class="px-3 mb-4">
-                <button id="nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-400 hover:bg-white/10 hover:text-white font-semibold group transition-all" onclick="selectSection('about-book')">
+                <button id="nav-about-book" class="nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1 flex items-center justify-between outline-none border-l-4 border-transparent text-slate-200 hover:bg-white/10 hover:text-white font-semibold group transition-all" onclick="selectSection('about-book')">
                     <span class="flex items-center gap-3"><i data-lucide="book" class="w-4 h-4"></i> About the Book</span>
                     <i id="about-book-icon" data-lucide="chevron-right" class="transition-transform opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 w-4 h-4 flex-shrink-0"></i>
                 </button>
             </div>
 
             <div class="px-6 pb-2 border-t border-white/10 pt-6">
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-4">Areas to beware of</p>
+                <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.15em] mb-4">Areas to beware of</p>
             </div>
 
             <nav class="px-3 space-y-1 pb-6" id="sidebar-nav">
@@ -955,7 +955,7 @@
                 const icon = document.getElementById(iconId);
                 if (currentSectionId === 'about-book') {
                     button.classList.add('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]', 'border', 'border-orange-500/30');
-                    button.classList.remove('text-slate-400', 'hover:bg-white/10', 'hover:text-white', 'border-transparent');
+                    button.classList.remove('text-slate-200', 'hover:bg-white/10', 'hover:text-white', 'border-transparent');
                     if (icon) {
                         icon.classList.replace('opacity-0', 'opacity-100');
                         icon.classList.replace('-translate-x-2', 'translate-x-1');
@@ -963,7 +963,7 @@
                     }
                 } else {
                     button.classList.remove('active', 'shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]', 'border', 'border-orange-500/30');
-                    button.classList.add('text-slate-400', 'hover:bg-white/10', 'hover:text-white', 'border-transparent');
+                    button.classList.add('text-slate-200', 'hover:bg-white/10', 'hover:text-white', 'border-transparent');
                     if (icon) {
                         icon.classList.replace('opacity-100', 'opacity-0');
                         icon.classList.replace('translate-x-1', '-translate-x-2');
@@ -977,7 +977,7 @@
                 const className = `nav-item w-full text-left px-4 py-3 rounded-xl text-sm mb-1.5 flex items-center justify-between outline-none border-l-4 border-transparent
                     ${isActive
                         ? 'active shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] border border-orange-500/30'
-                        : 'text-slate-400 hover:bg-white/10 hover:text-white font-semibold'}`;
+                        : 'text-slate-200 hover:bg-white/10 hover:text-white font-semibold'}`;
                 const itemHtml = `
                     <span class="truncate pr-2">${section.shortTitle}</span>
                     <i data-lucide="chevron-right" class="transition-transform ${isActive ? 'text-brand-orange translate-x-1 opacity-100' : 'text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'} w-4 h-4 flex-shrink-0"></i>
