@@ -28,9 +28,14 @@
     }
 
     .shell {
-      max-width: 1240px;
+      width: 100%;
       margin: 0 auto;
       padding: 24px;
+    }
+
+    .centered {
+      max-width: 1240px;
+      margin: 0 auto;
     }
 
     .header {
@@ -154,14 +159,14 @@
     }
 
     .iframe-wrap {
-      border-radius: 18px;
+      border-radius: 0;
       overflow: hidden;
       background: #fff;
     }
 
     iframe {
       width: 100%;
-      height: min(86vh, 1000px);
+      height: calc(100vh - 186px);
       border: 0;
       display: block;
       background: #fff;
@@ -178,14 +183,14 @@
       }
 
       iframe {
-        height: 78vh;
+        height: calc(100vh - 174px);
       }
     }
   </style>
 </head>
 <body>
   <div class="shell">
-    <section class="header">
+    <section class="header centered">
       <h1 class="title">99 Privacy Breaches Preview</h1>
       <p class="subtitle">
         Lead-magnet microsite for new DPOs. Use the tabs to access the interactive preview,
@@ -198,13 +203,13 @@
       </div>
     </section>
 
-    <section class="panel active" id="tab-preview" role="tabpanel" aria-labelledby="tab-btn-preview">
+    <section class="panel preview-panel active" id="tab-preview" role="tabpanel" aria-labelledby="tab-btn-preview">
       <div class="iframe-wrap">
         <iframe src="./app.html" title="99 Breaches interactive preview"></iframe>
       </div>
     </section>
 
-    <section class="panel" id="tab-docs" role="tabpanel" aria-labelledby="tab-btn-docs">
+    <section class="panel centered" id="tab-docs" role="tabpanel" aria-labelledby="tab-btn-docs">
       <div class="panel-body">
         <h2>Documentation</h2>
         <p>
@@ -239,7 +244,7 @@
       </div>
     </section>
 
-    <section class="panel" id="tab-deploy" role="tabpanel" aria-labelledby="tab-btn-deploy">
+    <section class="panel centered" id="tab-deploy" role="tabpanel" aria-labelledby="tab-btn-deploy">
       <div class="panel-body">
         <h2>Deploy & Edit Guide</h2>
 
@@ -317,3 +322,10 @@ git push origin main</div>
   </script>
 </body>
 </html>
+    .panel.preview-panel {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none;
+      background: transparent;
+    }
