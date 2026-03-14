@@ -176,7 +176,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-slate-900 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden bg-brand-light">
+<body class="font-sans text-slate-100 antialiased selection:bg-brand-orange selection:text-white flex h-screen overflow-hidden" style="background-color:#0f1117">
 
     <!-- Promo Banner: DPO Course Malaysia -->
     <div id="webinar-banner" class="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-[#1E2328] to-[#2d3748] text-white text-sm py-2.5 px-4 flex items-center justify-center gap-3 border-b border-slate-700 shadow-lg">
@@ -329,7 +329,7 @@
         </header>
 
         <!-- Right Content Pane (Scrolls underneath header) -->
-        <main class="flex-1 overflow-y-auto custom-scrollbar pt-24 pb-12 px-6 md:px-12 lg:px-20 relative" id="main-content">
+        <main class="flex-1 overflow-y-auto custom-scrollbar pt-24 pb-12 px-6 md:px-12 lg:px-20 relative" id="main-content" style="background-color:#0f1117">
             
             <!-- Abstract background graphic for main content -->
             <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-orange-50 to-transparent rounded-full blur-[100px] opacity-80 pointer-events-none -z-10"></div>
@@ -1197,7 +1197,7 @@
                 const infographicHtml = chapter.infographic ? chapter.infographic : '';
 
                 const cardHtml = `
-                    <div class="stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s">
+                    <div class="chapter-card stagger-item animate-fade-in-up bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-orange-200 hover:-translate-y-1 transition-all duration-300 overflow-hidden group" style="animation-delay: ${index * 0.08}s">
                         <button class="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none" onclick="toggleChapter(${chapter.num})">
                             <div class="pr-6">
                                 <div class="flex items-center mb-2.5">
