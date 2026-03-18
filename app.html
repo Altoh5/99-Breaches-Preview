@@ -1241,34 +1241,7 @@
                                     <p class="text-sm font-bold text-slate-200 mb-3">🔓 Unlock More Chapters — free</p>
                                     <iframe id="ghl-form-iframe" src="https://api.leadconnectorhq.com/widget/form/p8MYZtOzKPjwXu0lRjnF" style="width:100%; border:none; height:200px; overflow:hidden;" scrolling="no"></iframe>
                                     <button id="unlock-btn" style="display:none" onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId);" class="mt-4 w-full px-6 py-4 bg-brand-orange text-white text-base font-bold rounded-xl hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] transition-all text-center">🎉 Congratulations! You've unlocked more chapters — Click here to view</button>
-                                    <script>
-                                    (function(){
-                                        var iframe = document.getElementById('ghl-form-iframe');
-                                        var btn = document.getElementById('unlock-btn');
-                                        if(iframe && btn){
-                                            // Listen for message events from GHL form submission
-                                            window.addEventListener('message', function(e){
-                                                if(e.data && (e.data.type === 'form:submit' || e.data.formSubmitted || (typeof e.data === 'string' && e.data.indexOf('formSubmit') !== -1))){
-                                                    btn.style.display = '';
-                                                    localStorage.setItem('99b_unlocked','1');
-                                                }
-                                            });
-                                            // Fallback: detect iframe navigation (cross-origin load event)
-                                            var loadCount = 0;
-                                            iframe.addEventListener('load', function(){
-                                                loadCount++;
-                                                if(loadCount > 1){
-                                                    btn.style.display = '';
-                                                    localStorage.setItem('99b_unlocked','1');
-                                                }
-                                            });
-                                            // If already unlocked previously, show button immediately
-                                            if(localStorage.getItem('99b_unlocked') === '1'){
-                                                btn.style.display = '';
-                                            }
-                                        }
-                                    })();
-                                    </script>
+                                    <p class="text-xs text-slate-400 mt-2 text-center">Already submitted? <a href="#" onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId); return false;" class="text-brand-orange underline">Click to unlock</a></p>
                                 </div>` : '<p class="text-xs text-slate-500 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
                             </div>
                         </div>`;
@@ -1377,6 +1350,40 @@
             contentContainer.innerHTML += leadCaptureHtml;
 
             lucide.createIcons();
+
+            // Set up GHL form submission detection for unlock button
+            setupGateFormDetection();
+        }
+
+        // Detect GHL form submission and reveal unlock button
+        function setupGateFormDetection() {
+            var iframe = document.getElementById('ghl-form-iframe');
+            var btn = document.getElementById('unlock-btn');
+            if (!iframe || !btn) return;
+
+            // If already unlocked, show button immediately
+            if (localStorage.getItem('99b_unlocked') === '1') {
+                btn.style.display = '';
+                return;
+            }
+
+            // Listen for postMessage from GHL form
+            window.addEventListener('message', function(e) {
+                if (e.data && (e.data.type === 'form:submit' || e.data.formSubmitted || (typeof e.data === 'string' && e.data.indexOf('formSubmit') !== -1))) {
+                    btn.style.display = '';
+                    localStorage.setItem('99b_unlocked', '1');
+                }
+            });
+
+            // Fallback: detect iframe navigation after form submit
+            var loadCount = 0;
+            iframe.addEventListener('load', function() {
+                loadCount++;
+                if (loadCount > 1) {
+                    btn.style.display = '';
+                    localStorage.setItem('99b_unlocked', '1');
+                }
+            });
         }
 
         // Toggle Chapter Accordion
