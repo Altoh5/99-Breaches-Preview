@@ -1240,8 +1240,7 @@
                                 <div class="mt-5 bg-orange-900/20 border border-orange-700/30 rounded-xl p-5">
                                     <p class="text-sm font-bold text-slate-200 mb-3">🔓 Unlock More Chapters — free</p>
                                     <iframe id="ghl-form-iframe" src="https://api.leadconnectorhq.com/widget/form/p8MYZtOzKPjwXu0lRjnF" style="width:100%; border:none; height:200px; overflow:hidden;" scrolling="no"></iframe>
-                                    <button id="unlock-btn" style="display:none" onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId);" class="mt-4 w-full px-6 py-4 bg-brand-orange text-white text-base font-bold rounded-xl hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] transition-all text-center">🎉 Congratulations! You've unlocked more chapters — Click here to view</button>
-                                    <p class="text-xs text-slate-400 mt-2 text-center">Already submitted? <a href="#" onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId); return false;" class="text-brand-orange underline">Click to unlock</a></p>
+                                    <button onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId);" class="mt-4 w-full px-6 py-4 bg-brand-orange text-white text-lg font-bold rounded-xl hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.4)] hover:-translate-y-0.5 transition-all text-center cursor-pointer">🎉 Congratulations! You've unlocked more chapters — Click here to view</button>
                                 </div>` : '<p class="text-xs text-slate-500 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
                             </div>
                         </div>`;
