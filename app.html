@@ -1350,25 +1350,6 @@
 
             lucide.createIcons();
 
-            // Set up GHL form submission detection for unlock button
-            setupGateFormDetection();
-        }
-
-        // Reveal unlock button after form is shown
-        function setupGateFormDetection() {
-            var btn = document.getElementById('unlock-btn');
-            if (!btn) return;
-
-            // If already unlocked, show button immediately
-            if (localStorage.getItem('99b_unlocked') === '1') {
-                btn.style.display = '';
-                return;
-            }
-
-            // Show button after 8 seconds — enough time to submit the form
-            setTimeout(function() {
-                if (btn) btn.style.display = '';
-            }, 8000);
         }
 
         // Toggle Chapter Accordion
