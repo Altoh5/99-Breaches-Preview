@@ -1124,12 +1124,7 @@
                     <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
                     <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
                     
-                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="handleLeadSubmit(event, this)">
-                        <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
-                        <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            Get Free DPO Checklist <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </form>
+                    <iframe src="https://api.leadconnectorhq.com/widget/form/p8MYZtOzKPjwXu0lRjnF" style="width:100%; border:none; height:200px; overflow:hidden;" scrolling="no"></iframe>
                 </div>
             `;
 
@@ -1244,10 +1239,8 @@
                                 ${index === FREE_CHAPTERS ? `
                                 <div class="mt-5 bg-orange-900/20 border border-orange-700/30 rounded-xl p-5">
                                     <p class="text-sm font-bold text-slate-200 mb-3">🔓 Unlock More Chapters — free</p>
-                                    <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleGateSubmit(event, this)">
-                                        <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-2.5 rounded-lg border border-orange-700/50 bg-slate-800 text-sm font-medium text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange">
-                                        <button type="submit" class="px-5 py-2.5 bg-brand-orange text-white text-sm font-bold rounded-lg hover:bg-orange-600 transition-colors whitespace-nowrap">Get Access →</button>
-                                    </form>
+                                    <iframe src="https://api.leadconnectorhq.com/widget/form/p8MYZtOzKPjwXu0lRjnF" style="width:100%; border:none; height:200px; overflow:hidden;" scrolling="no"></iframe>
+                                    <p class="text-xs text-slate-400 mt-2 text-center">Already submitted? <button onclick="localStorage.setItem('99b_unlocked','1'); selectSection(currentSectionId);" class="text-brand-orange underline">Click to unlock</button></p>
                                 </div>` : '<p class="text-xs text-slate-500 mt-3 text-center">Submit your email above to unlock this chapter</p>'}
                             </div>
                         </div>`;
@@ -1350,12 +1343,7 @@
                     <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Want to dive deeper?</h3>
                     <p class="text-slate-300 mb-8 max-w-lg mx-auto font-medium text-lg leading-relaxed">Get exclusive access to more case studies, full checklists, and practical guides on operational compliance directly to your inbox.</p>
                     
-                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" onsubmit="handleLeadSubmit(event, this)">
-                        <input type="email" placeholder="Enter your work email" required class="flex-1 bg-white/5 border border-white/20 rounded-xl px-5 py-3.5 text-white font-medium placeholder-slate-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all backdrop-blur-sm shadow-inner">
-                        <button type="submit" class="bg-brand-orange text-white font-bold rounded-xl px-8 py-3.5 hover:bg-[#d15817] shadow-[0_4px_14px_0_rgba(232,99,26,0.39)] hover:shadow-[0_6px_20px_rgba(232,99,26,0.23)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            Get Free DPO Checklist <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </form>
+                    <iframe src="https://api.leadconnectorhq.com/widget/form/p8MYZtOzKPjwXu0lRjnF" style="width:100%; border:none; height:200px; overflow:hidden;" scrolling="no"></iframe>
                 </div>
             `;
             contentContainer.innerHTML += leadCaptureHtml;
@@ -1428,53 +1416,9 @@
             selectSection('about-book');
         });
 
-        // Gate form (inline between chapters) — same endpoint, then unlock
-        async function handleGateSubmit(e, form) {
-            e.preventDefault();
-            const email = form.querySelector('input[type="email"]').value;
-            const btn = form.querySelector('button[type="submit"]');
-            btn.innerHTML = 'Unlocking...';
-            btn.disabled = true;
-            try {
-                await fetch('https://script.google.com/a/macros/straitsinteractive.com/s/AKfycbxmDLfizOXtagLctf6-9xkqWAUlzH6xn8jJQsSJhZAiuOCDXor-NLzjE67pLkyfN7o8/exec', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, source: '99-breaches-gate' })
-                });
-            } catch(err) {}
-            localStorage.setItem('99b_unlocked', '1');
-            // Re-render current section
-            const activeBtn = document.querySelector('.nav-item-active');
-            if (activeBtn) activeBtn.click();
-        }
+        // Gate unlock handled by GHL form + manual "Click to unlock" button
 
-        // Lead Capture — posts to Google Sheets via Apps Script web app
-        async function handleLeadSubmit(e, form) {
-            e.preventDefault();
-            const email = form.querySelector('input[type="email"]').value;
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<svg class="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending...';
-            btn.disabled = true;
-            try {
-                const res = await fetch('https://script.google.com/a/macros/straitsinteractive.com/s/AKfycbxmDLfizOXtagLctf6-9xkqWAUlzH6xn8jJQsSJhZAiuOCDXor-NLzjE67pLkyfN7o8/exec', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, source: '99-breaches-preview' })
-                });
-                if (res.ok) {
-                    localStorage.setItem('99b_unlocked', '1');
-                    form.innerHTML = '<div class="flex items-center justify-center gap-2 text-emerald-400 font-bold py-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> You\'re in! All chapters unlocked.</div>';
-                } else {
-                    throw new Error('Server error');
-                }
-            } catch (err) {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                // Fallback: mailto
-                window.location.href = 'mailto:alvin@straitsinteractive.com?subject=99 Breaches — DPO Checklist Request&body=Please send me the free DPO checklist. My email: ' + email;
-            }
-        }
+        // Lead capture handled by GHL form iframe
 
     </script>
 </body>
