@@ -1357,9 +1357,8 @@
 
         // Detect GHL form submission and reveal unlock button
         function setupGateFormDetection() {
-            var iframe = document.getElementById('ghl-form-iframe');
             var btn = document.getElementById('unlock-btn');
-            if (!iframe || !btn) return;
+            if (!btn) return;
 
             // If already unlocked, show button immediately
             if (localStorage.getItem('99b_unlocked') === '1') {
@@ -1367,23 +1366,46 @@
                 return;
             }
 
-            // Listen for postMessage from GHL form
+            // Listen for ALL postMessages — GHL sends various event formats
             window.addEventListener('message', function(e) {
-                if (e.data && (e.data.type === 'form:submit' || e.data.formSubmitted || (typeof e.data === 'string' && e.data.indexOf('formSubmit') !== -1))) {
-                    btn.style.display = '';
-                    localStorage.setItem('99b_unlocked', '1');
-                }
+                try {
+                    var data = e.data;
+                    // Check string messages
+                    if (typeof data === 'string' && (data.indexOf('formSubmit') !== -1 || data.indexOf('thank') !== -1)) {
+                        btn.style.display = '';
+                        localStorage.setItem('99b_unlocked', '1');
+                        return;
+                    }
+                    // Check object messages
+                    if (data && typeof data === 'object') {
+                        var str = JSON.stringify(data).toLowerCase();
+                        if (str.indexOf('submit') !== -1 || str.indexOf('thank') !== -1 || str.indexOf('success') !== -1 || str.indexOf('complete') !== -1) {
+                            btn.style.display = '';
+                            localStorage.setItem('99b_unlocked', '1');
+                        }
+                    }
+                } catch(err) {}
             });
 
-            // Fallback: detect iframe navigation after form submit
-            var loadCount = 0;
-            iframe.addEventListener('load', function() {
-                loadCount++;
-                if (loadCount > 1) {
-                    btn.style.display = '';
-                    localStorage.setItem('99b_unlocked', '1');
-                }
-            });
+            // Fallback: poll iframe height changes (GHL form shrinks after submission)
+            var iframe = document.getElementById('ghl-form-iframe');
+            if (iframe) {
+                var checkCount = 0;
+                var poller = setInterval(function() {
+                    checkCount++;
+                    try {
+                        // GHL thank-you page changes iframe height
+                        var h = iframe.getBoundingClientRect().height;
+                        if (checkCount > 5 && h < 150) {
+                            btn.style.display = '';
+                            localStorage.setItem('99b_unlocked', '1');
+                            clearInterval(poller);
+                        }
+                    } catch(err) {}
+                    // Stop polling after 5 minutes
+                    if (checkCount > 300) clearInterval(poller);
+                }, 1000);
+            }
         }
 
         // Toggle Chapter Accordion
