@@ -493,36 +493,35 @@
 
         /* * DPMP VIDEO RESOURCES DATA
          * DPOinBOX Academy playlist + DPEX Network DPMP videos
-         * Mapped to Data Protection Management Programme (DPMP) framework areas
+         * Structured around the Privacy Operational Life Cycle:
+         *   GOVERN → ASSESS → PROTECT → SUSTAIN → RESPOND
          */
         const dpmpVideoData = [
             {
-                category: 'Programme Overview & Governance',
+                category: 'Govern',
+                subtitle: 'Programme Governance & DPO Appointment',
                 icon: 'shield-check',
-                description: 'Understand the DPMP framework and how DPOinBOX supports your data protection programme governance.',
+                color: 'blue',
+                description: 'Establish your data protection programme, appoint a DPO, and understand certification frameworks like DPTM.',
                 videos: [
                     { id: 'E-2SL_05Tsk', title: 'Data Protection Management Programme (DPMP)', duration: '3:45', source: 'DPEX Network' },
                     { id: 'EKoGM-Jy0FY', title: 'Overview of DPOinBOX', duration: '5:18', source: 'DPOinBOX Academy' },
                     { id: 'eN-pzHKLsK8', title: 'Introduction to DPOinBOX | DPIA Software | DPMP Tools', duration: '1:46', source: 'DPOinBOX Academy' },
-                    { id: 'TN358DPIfv4', title: 'We Help Data Protection Officers Do Their Job Easily', duration: '2:30', source: 'DPEX Network' },
                     { id: 'uwmZ3iWnjTo', title: 'Data Protection Officer Jobs are HOT in Demand!', duration: '5:11', source: 'DPOinBOX Academy' },
+                    { id: 'CStbJlrfsQo', title: 'New to the DPO Role? This Hands-On Preview Will Help', duration: '9:15', source: 'DPEX Network' },
+                    { id: 'JfaAQ1bj8Tg', title: 'Things to Know About Data Protection Trust Mark (DPTM)', duration: '6:12', source: 'DPEX Network' },
+                    { id: 'RseJI78L9u0', title: 'The Hottest Buzzword Every DPO Should Know | DPTM', duration: '4:30', source: 'DPEX Network' },
                 ]
             },
             {
-                category: 'Monitoring, Audit & Communication (MAC)',
-                icon: 'bar-chart-3',
-                description: 'The MAC Framework — a 3-part series on sustaining and communicating your data protection programme effectively.',
-                videos: [
-                    { id: '0_6qM-aaKaM', title: 'How to Monitor Your Data Protection Programme Effectively | MAC Ep. 1', duration: '8:47', source: 'DPOinBOX Academy' },
-                    { id: 'DGwkSTrt8qE', title: 'How to Audit Your Data Protection Programme | MAC Ep. 2', duration: '7:49', source: 'DPOinBOX Academy' },
-                    { id: 'Pt3REghJPnI', title: 'How to Communicate Your Data Protection Efforts | MAC Ep. 3', duration: '9:08', source: 'DPOinBOX Academy' },
-                ]
-            },
-            {
-                category: 'Risk Assessment & DPIA',
+                category: 'Assess',
+                subtitle: 'Data Inventory, Process Mapping & Risk Assessment',
                 icon: 'scan-search',
-                description: 'Learn how to identify, assess, and manage data protection risks using DPIA tools and practical frameworks.',
+                color: 'amber',
+                description: 'Map your data inventory, identify business process risks, and conduct DPIAs to understand your organisation\'s risk landscape.',
                 videos: [
+                    { id: 'ZcePTV649Yo', title: 'What is Personal Data Inventory & How Is It Useful?', duration: '6:20', source: 'DPOinBOX Academy' },
+                    { id: 'YiF26_qObHU', title: 'DPOinBOX Academy — Map the Data Inventory in a Few Clicks!', duration: '1:45', source: 'DPOinBOX Academy' },
                     { id: '2T_NEFK1-4A', title: 'Identifying Risks | DPIA Software | DPMP Tools', duration: '2:00', source: 'DPOinBOX Academy' },
                     { id: 'v4kpcDfVW0A', title: 'Learn How to Do Your Data Protection Risk Assessment in a Few Clicks', duration: '37:19', source: 'DPOinBOX Academy' },
                     { id: 'F8m3tYs-MXA', title: 'DPOinBOX Tips: Digitalisation — Handling New Project Risks', duration: '9:44', source: 'DPOinBOX Academy' },
@@ -530,55 +529,46 @@
                 ]
             },
             {
-                category: 'Data Inventory & Mapping',
-                icon: 'database',
-                description: 'Build and maintain your personal data inventory — a foundational requirement of any DPMP.',
-                videos: [
-                    { id: 'ZcePTV649Yo', title: 'What is Personal Data Inventory & How Is It Useful?', duration: '6:20', source: 'DPOinBOX Academy' },
-                    { id: 'YiF26_qObHU', title: 'DPOinBOX Academy — Map the Data Inventory in a Few Clicks!', duration: '1:45', source: 'DPOinBOX Academy' },
-                ]
-            },
-            {
-                category: 'Policies, Controls & Programme Management',
-                icon: 'file-check-2',
-                description: 'Roll up operational controls into enforceable policies and sustain your DPMP initiatives over time.',
+                category: 'Protect',
+                subtitle: 'Policies, Controls, Training & Third-Party Management',
+                icon: 'lock',
+                color: 'emerald',
+                description: 'Implement controls, roll them into enforceable policies, train your staff, and manage third-party vendor risks.',
                 videos: [
                     { id: 'USsFK1ZasuY', title: 'Manage Programme | DPIA Software | DPMP Tools', duration: '1:57', source: 'DPOinBOX Academy' },
                     { id: 'gBy_ovrJcAU', title: 'Rolling Up Data Protection Controls to Policies with DPOinBOX', duration: '7:17', source: 'DPOinBOX Academy' },
-                    { id: 'A1yJQ5KF2X8', title: 'Sustain Initiatives | DPIA Software | DPMP Tools', duration: '2:00', source: 'DPOinBOX Academy' },
-                ]
-            },
-            {
-                category: 'Training & Awareness',
-                icon: 'graduation-cap',
-                description: 'Increase staff awareness of data protection through e-learning and regional training modules.',
-                videos: [
+                    { id: 'TN358DPIfv4', title: 'We Help Data Protection Officers Do Their Job Easily', duration: '2:30', source: 'DPEX Network' },
                     { id: 'Xjt57MbGSJo', title: 'Increasing Staff Awareness of Data Protection via E-Learning', duration: '4:32', source: 'DPOinBOX Academy' },
                     { id: 'tCWJSouD6bQ', title: 'Philippines Data Privacy (DPA) Training Module Now Available', duration: '1:27', source: 'DPOinBOX Academy' },
-                    { id: 'CStbJlrfsQo', title: 'New to the DPO Role? This Hands-On Preview Will Help', duration: '9:15', source: 'DPEX Network' },
-                ]
-            },
-            {
-                category: 'Third-Party & Vendor Management',
-                icon: 'handshake',
-                description: 'Manage data protection risks across your vendor ecosystem with due diligence and ongoing monitoring.',
-                videos: [
                     { id: 'H3dfPao-FTQ', title: 'Third-Party Due Diligence / Vendor Management (DPMP)', duration: '4:51', source: 'DPOinBOX Academy' },
                     { id: 'WKYJ9LKCzd4', title: 'Identify Your Third-Party Risks Relating to Data Privacy', duration: '4:47', source: 'DPOinBOX Academy' },
                     { id: 'rypXwLPRvFs', title: 'Closing the Loop — Avoiding Leakages Through 3rd Party Vendors', duration: '3:00', source: 'DPOinBOX Academy' },
                 ]
             },
             {
-                category: 'Breach Management & Emerging Topics',
+                category: 'Sustain',
+                subtitle: 'Monitor, Audit & Communicate (MAC Framework)',
+                icon: 'bar-chart-3',
+                color: 'purple',
+                description: 'Keep your programme alive with continuous monitoring, regular audits, and proactive communication to stakeholders.',
+                videos: [
+                    { id: '0_6qM-aaKaM', title: 'How to Monitor Your Data Protection Programme Effectively | MAC Ep. 1', duration: '8:47', source: 'DPOinBOX Academy' },
+                    { id: 'DGwkSTrt8qE', title: 'How to Audit Your Data Protection Programme | MAC Ep. 2', duration: '7:49', source: 'DPOinBOX Academy' },
+                    { id: 'Pt3REghJPnI', title: 'How to Communicate Your Data Protection Efforts | MAC Ep. 3', duration: '9:08', source: 'DPOinBOX Academy' },
+                    { id: 'A1yJQ5KF2X8', title: 'Sustain Initiatives | DPIA Software | DPMP Tools', duration: '2:00', source: 'DPOinBOX Academy' },
+                ]
+            },
+            {
+                category: 'Respond',
+                subtitle: 'Breach Management & Incident Response',
                 icon: 'alert-triangle',
-                description: 'Stay ahead of breach notification requirements, smishing threats, DPTM certification, and blockchain-era challenges.',
+                color: 'rose',
+                description: 'Prepare for and respond to data breaches — from notification obligations to emerging cyber threats like smishing and ransomware.',
                 videos: [
                     { id: '_DNBleexb_A', title: 'Data Breach Notification Obligation in Less Than 3 Minutes', duration: '2:39', source: 'DPOinBOX Academy' },
-                    { id: '4iYLLpGo40A', title: 'What is Smishing? | Singapore SMS Sender ID Registry', duration: '1:31', source: 'DPOinBOX Academy' },
-                    { id: 'JfaAQ1bj8Tg', title: 'Things to Know About Data Protection Trust Mark (DPTM)', duration: '6:12', source: 'DPEX Network' },
-                    { id: 'RseJI78L9u0', title: 'The Hottest Buzzword Every DPO Should Know | DPTM', duration: '4:30', source: 'DPEX Network' },
-                    { id: 'rjRyz-0fKtU', title: 'Blockchain, Med Tech and CFOs — Regional Data Protection Developments', duration: '6:04', source: 'DPOinBOX Academy' },
                     { id: 'oFWGoUlyDZ4', title: '99 Breaches: Your Inbox Could Be a Breach Risk | DPO Tips', duration: '3:00', source: 'DPEX Network' },
+                    { id: '4iYLLpGo40A', title: 'What is Smishing? | Singapore SMS Sender ID Registry', duration: '1:31', source: 'DPOinBOX Academy' },
+                    { id: 'rjRyz-0fKtU', title: 'Blockchain, Med Tech and CFOs — Regional Data Protection Developments', duration: '6:04', source: 'DPOinBOX Academy' },
                 ]
             }
         ];
@@ -594,10 +584,11 @@
                 chapters: [
                     {
                         num: 1,
-                        title: 'Data protection: don\'t forget that it is also physical',
+                        title: ‘Data protection: don\’t forget that it is also physical’,
+                        relatedDPMP: [‘ZcePTV649Yo’, ‘0_6qM-aaKaM’, ‘E-QTGO3GQv4’],
                         hasVideo: true,
-                        videoTitle: 'Related video: Data protection - don’t forget that it is also physical',
-                        videoUrl: 'https://www.youtube-nocookie.com/embed/RdQAxeZjwt0',
+                        videoTitle: ‘Related video: Data protection - don’t forget that it is also physical’,
+                        videoUrl: ‘https://www.youtube-nocookie.com/embed/RdQAxeZjwt0’,
                         context: 'While organizations heavily invest in firewalls and network security, they often forget the massive amount of paper documents containing personal, confidential, or sensitive information. Common issues include official documents (like land titles or marriage certificates), meeting notes, and application forms left unattended on desks or improperly stored.',
                         learnings: 'A DPO must map the physical "document life cycle" (Create, Store, Use/Share, Disclose, Dispose). Creating a document flow diagram helps identify physical vulnerabilities (e.g., the handover point between departments). Legal compliance is useless if an unauthorized cleaner or visitor can simply pick up a confidential file from an unlocked desk.',
                         infographic: `
@@ -642,6 +633,7 @@
                     {
                         num: 3,
                         title: 'Designing privacy into information systems and processes',
+                        relatedDPMP: ['F8m3tYs-MXA', '2T_NEFK1-4A', 'E-QTGO3GQv4'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -683,6 +675,7 @@
                     {
                         num: 8,
                         title: 'Are your sales and service counters compliant?',
+                        relatedDPMP: ['Xjt57MbGSJo', 'E-QTGO3GQv4', 'gBy_ovrJcAU'],
                         hasVideo: true,
                         videoTitle: 'Related video: Are your sales and service counters compliant with the data protection law?',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/YQ_G49qL2hA',
@@ -734,6 +727,7 @@
                     {
                         num: 28,
                         title: 'Anonymising personal data but is the individual really not identifiable?',
+                        relatedDPMP: ['v4kpcDfVW0A', '2T_NEFK1-4A'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -749,6 +743,7 @@
                     {
                         num: 38,
                         title: 'Watch your spreadsheet – spreading personal data',
+                        relatedDPMP: ['oFWGoUlyDZ4', '0_6qM-aaKaM', 'Xjt57MbGSJo'],
                         hasVideo: true,
                         videoTitle: 'Related video: Hitting the “send” button and regretting it',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/C-PrLkMJKa0',
@@ -772,6 +767,7 @@
                     {
                         num: 40,
                         title: 'Identity verification – the wrong way',
+                        relatedDPMP: ['Xjt57MbGSJo', 'gBy_ovrJcAU'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -803,6 +799,7 @@
                     {
                         num: 41,
                         title: 'Identity verification – the right way',
+                        relatedDPMP: ['gBy_ovrJcAU', 'DGwkSTrt8qE'],
                         hasVideo: true,
                         videoTitle: 'Related video: Identity Verification | The Right Way',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/krnbhbY_I_Q',
@@ -844,6 +841,7 @@
                     {
                         num: 49,
                         title: 'Clean desk way to data privacy',
+                        relatedDPMP: ['0_6qM-aaKaM', 'E-QTGO3GQv4'],
                         hasVideo: true,
                         videoTitle: 'Related video: Lock it or lose it',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/IDQpk5rXPGY',
@@ -859,6 +857,7 @@
                     {
                         num: 51,
                         title: 'Open office, open invitation to snoop',
+                        relatedDPMP: ['E-QTGO3GQv4', 'gBy_ovrJcAU'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -882,6 +881,7 @@
                     {
                         num: 62,
                         title: 'Beware - don\'t lose your USB drive',
+                        relatedDPMP: ['E-QTGO3GQv4', 'v4kpcDfVW0A'],
                         hasVideo: true,
                         videoTitle: 'Related video: Beware - don’t ever lose or misplace your USB drive or other portable storage device',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/i_rP-44Kqgw',
@@ -897,6 +897,7 @@
                     {
                         num: 73,
                         title: 'A-tearing we will go (Shredding)',
+                        relatedDPMP: ['ZcePTV649Yo', 'gBy_ovrJcAU'],
                         hasVideo: true,
                         videoTitle: 'Related video: A-tearing we will go',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/dN87mJ3ryNk',
@@ -920,6 +921,7 @@
                     {
                         num: 80,
                         title: 'CCTV footage - to show or not to show',
+                        relatedDPMP: ['v4kpcDfVW0A', '2T_NEFK1-4A'],
                         hasVideo: true,
                         videoTitle: 'Related video: CCTV footage – To Show or Not To Show… and To Warn?',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/UFrSky6WcOo',
@@ -935,6 +937,7 @@
                     {
                         num: 86,
                         title: 'Watch what you say about your employees or clients',
+                        relatedDPMP: ['WKYJ9LKCzd4', 'Xjt57MbGSJo'],
                         hasVideo: true,
                         videoTitle: 'Related video: Think Twice before disclosing employees\' personal data',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/MtAfp-cpa98',
@@ -958,6 +961,7 @@
                     {
                         num: 89,
                         title: 'Have you appointed a Data Protection Officer?',
+                        relatedDPMP: ['E-2SL_05Tsk', 'uwmZ3iWnjTo', 'EKoGM-Jy0FY'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -983,6 +987,7 @@
                     {
                         num: 95,
                         title: 'Ransomware – pay up or else',
+                        relatedDPMP: ['_DNBleexb_A', '4iYLLpGo40A'],
                         hasVideo: true,
                         videoTitle: 'Related video: Ransomware - Pay up or else...',
                         videoUrl: 'https://www.youtube-nocookie.com/embed/wXys4vKq38s',
@@ -1018,6 +1023,7 @@
                     {
                         num: 97,
                         title: 'When your AI chatbot becomes a legal liability',
+                        relatedDPMP: ['F8m3tYs-MXA', 'rjRyz-0fKtU'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -1054,6 +1060,7 @@
                     {
                         num: 98,
                         title: '72 hours: the breach notification clock starts ticking now',
+                        relatedDPMP: ['_DNBleexb_A', 'Pt3REghJPnI'],
                         hasVideo: false,
                         videoTitle: null,
                         videoUrl: null,
@@ -1356,16 +1363,38 @@
                             <p class="text-lg text-slate-300 max-w-2xl leading-relaxed font-medium mb-6">
                                 Curated video guides from <a href="https://www.youtube.com/@dpexnetwork" target="_blank" class="text-brand-orange hover:underline font-bold">DPEX Network</a> and the
                                 <a href="https://youtube.com/playlist?list=PLeFbwfnrYD4qbvcEmHRTj0_Z4betys6BC" target="_blank" class="text-brand-orange hover:underline font-bold">DPOinBOX Academy</a> playlist —
-                                mapped to the Data Protection Management Programme (DPMP) framework to support your operational compliance journey.
+                                structured around the <strong class="text-white">Privacy Operational Life Cycle</strong> to support your DPMP compliance journey.
                             </p>
+                            <!-- Lifecycle Flow Diagram -->
+                            <div class="flex flex-wrap items-center gap-2 mb-6">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/25">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Govern
+                                </span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/15 text-amber-400 border border-amber-500/25">
+                                    <i data-lucide="scan-search" class="w-3.5 h-3.5"></i> Assess
+                                </span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
+                                    <i data-lucide="lock" class="w-3.5 h-3.5"></i> Protect
+                                </span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-purple-500/15 text-purple-400 border border-purple-500/25">
+                                    <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> Sustain
+                                </span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-rose-500/15 text-rose-400 border border-rose-500/25">
+                                    <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Respond
+                                </span>
+                            </div>
                             <div class="flex flex-wrap items-center gap-3">
                                 <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-white/5 text-slate-300 border border-white/10">
                                     <i data-lucide="film" class="w-3.5 h-3.5 text-brand-orange"></i>
                                     ${dpmpVideoData.reduce((sum, cat) => sum + cat.videos.length, 0)} Videos
                                 </span>
                                 <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-white/5 text-slate-300 border border-white/10">
-                                    <i data-lucide="layers" class="w-3.5 h-3.5 text-brand-orange"></i>
-                                    ${dpmpVideoData.length} DPMP Areas
+                                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-brand-orange"></i>
+                                    5-Phase Lifecycle
                                 </span>
                                 <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-white/5 text-slate-300 border border-white/10">
                                     <i data-lucide="external-link" class="w-3.5 h-3.5 text-brand-orange"></i>
@@ -1406,15 +1435,20 @@
                     </div>
                 `).join('');
 
+                const colorMap = { blue: 'blue', amber: 'amber', emerald: 'emerald', purple: 'purple', rose: 'rose' };
+                const c = cat.color || 'blue';
                 html += `
                     <div class="animate-fade-in-up mb-12" style="animation-delay: ${(catIdx + 1) * 0.08}s">
                         <div class="flex items-start gap-4 mb-6">
-                            <div class="w-11 h-11 bg-brand-orange/10 rounded-xl border border-brand-orange/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i data-lucide="${cat.icon}" class="w-5 h-5 text-brand-orange"></i>
+                            <div class="w-11 h-11 bg-${c}-500/15 rounded-xl border border-${c}-500/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="${cat.icon}" class="w-5 h-5 text-${c}-400"></i>
                             </div>
                             <div>
-                                <h2 class="text-xl font-bold text-white tracking-tight">${cat.category}</h2>
-                                <p class="text-sm text-slate-400 font-medium mt-1 leading-relaxed">${cat.description}</p>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h2 class="text-xl font-bold text-white tracking-tight">${cat.category}</h2>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-${c}-400/70 bg-${c}-500/10 px-2 py-0.5 rounded">${cat.subtitle}</span>
+                                </div>
+                                <p class="text-sm text-slate-400 font-medium leading-relaxed">${cat.description}</p>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -1450,6 +1484,57 @@
 
             contentContainer.innerHTML = html;
             lucide.createIcons();
+        }
+
+        // Helper: look up a DPMP video by ID from dpmpVideoData
+        function getDPMPVideo(videoId) {
+            for (const cat of dpmpVideoData) {
+                const found = cat.videos.find(v => v.id === videoId);
+                if (found) return { ...found, category: cat.category };
+            }
+            return null;
+        }
+
+        // Helper: render related DPMP videos for a chapter
+        function renderRelatedDPMP(chapter) {
+            if (!chapter.relatedDPMP || chapter.relatedDPMP.length === 0) return '';
+            const videos = chapter.relatedDPMP.map(getDPMPVideo).filter(Boolean);
+            if (videos.length === 0) return '';
+
+            const items = videos.map(v => `
+                <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-3 p-3 rounded-xl bg-zinc-800/60 border border-zinc-700/50 hover:border-brand-orange/40 hover:bg-zinc-800 transition-all group/vid">
+                    <div class="relative flex-shrink-0 w-24 h-14 rounded-lg overflow-hidden">
+                        <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-7 h-7 bg-brand-orange/90 rounded-full flex items-center justify-center group-hover/vid:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-3 h-3 text-white fill-white ml-0.5"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0.5 right-0.5 px-1 py-0.5 rounded bg-black/80 text-[9px] font-mono font-bold text-white">${v.duration}</div>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-xs font-bold text-slate-200 leading-snug line-clamp-2 group-hover/vid:text-brand-orange transition-colors">${v.title}</p>
+                        <p class="text-[10px] text-slate-500 mt-1 font-medium">${v.category}</p>
+                    </div>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-600 group-hover/vid:text-brand-orange flex-shrink-0 transition-colors"></i>
+                </a>
+            `).join('');
+
+            return `
+                <div class="mt-10 pt-8 border-t border-white/10">
+                    <h4 class="text-sm font-extrabold text-slate-200 mb-4 flex items-center gap-2 uppercase tracking-wider">
+                        <div class="p-1.5 bg-blue-900/30 rounded-lg"><i data-lucide="graduation-cap" class="w-4 h-4 text-blue-400"></i></div>
+                        DPMP Resources for This Case
+                        <button class="ml-auto text-[10px] font-bold text-brand-orange/70 hover:text-brand-orange normal-case tracking-normal flex items-center gap-1 transition-colors" onclick="event.stopPropagation(); selectSection('dpmp-resources');">
+                            View all <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </button>
+                    </h4>
+                    <div class="space-y-2">
+                        ${items}
+                    </div>
+                </div>
+            `;
         }
 
         function renderChapters(chapters) {
@@ -1578,6 +1663,7 @@
                                 </div>
 
                                 ${videoHtml}
+                                ${renderRelatedDPMP(chapter)}
                             </div>
                         </div>
                     </div>
